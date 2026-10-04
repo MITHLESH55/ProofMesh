@@ -27,6 +27,13 @@ from app.models.assurance import (
     PolicyDecision,
     ChangeProof,
 )
+from app.models.runtime import (
+    Deployment,
+    RuntimeBaseline,
+    RuntimeObservation,
+    RuntimeFinding,
+    CIAssuranceCheck,
+)
 
 __all__ = [
     "Base",
@@ -54,4 +61,9 @@ __all__ = [
     "EvidenceRecord",
     "PolicyDecision",
     "ChangeProof",
+    "Deployment",
+    "RuntimeBaseline",
+    "RuntimeObservation",
+    "RuntimeFinding",
+    "CIAssuranceCheck",
 ]

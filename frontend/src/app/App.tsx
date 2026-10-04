@@ -11,6 +11,7 @@ import { ChangeDetail } from '../pages/ChangeDetail';
 import { Settings } from '../pages/Settings';
 import { DependencyGraph } from '../pages/DependencyGraph';
 import { AssuranceView } from '../pages/AssuranceView';
+import { RuntimeAssurance } from '../pages/RuntimeAssurance';
 
 export const App: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ export const App: React.FC = () => {
           <Route path="/graph" element={<DependencyGraph />} />
           <Route path="/graph/:repoId" element={<DependencyGraph />} />
           <Route path="/assurance/:id" element={<AssuranceView />} />
+          <Route path="/runtime" element={<RuntimeAssurance />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
 
@@ -37,3 +39,4 @@ export const App: React.FC = () => {
     </Router>
   );
 };
+

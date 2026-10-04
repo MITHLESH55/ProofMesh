@@ -247,6 +247,102 @@ class ApiClient {
     });
     return res.data;
   }
+
+  // Phase 4 — CI/CD & Runtime Assurance Endpoints
+
+  async getDeployments(params?: { repository_id?: string; change_id?: string; environment?: string; limit?: number }) {
+    const searchParams = new URLSearchParams();
+    if (params?.repository_id) searchParams.append('repository_id', params.repository_id);
+    if (params?.change_id) searchParams.append('change_id', params.change_id);
+    if (params?.environment) searchParams.append('environment', params.environment);
+    if (params?.limit) searchParams.append('limit', params.limit.toString());
+
+    const qs = searchParams.toString();
+    const res = await this.request<any[]>(`/deployments${qs ? `?${qs}` : ''}`);
+    return res.data;
+  }
+
+  async getDeployment(id: string) {
+    const res = await this.request<any>(`/deployments/${id}`);
+    return res.data;
+  }
+
+  async createDeployment(data: {
+    repository_id: string;
+    change_id: string;
+    analysis_run_id: string;
+    commit_sha: string;
+    environment?: string;
+    status?: string;
+  }) {
+    const res = await this.request<any>('/deployments', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data;
+  }
+
+  async getDeploymentRuntime(id: string) {
+    const res = await this.request<any>(`/deployments/${id}/runtime`);
+    return res.data;
+  }
+
+  async getDeploymentAssurance(id: string) {
+    const res = await this.request<any>(`/deployments/${id}/assurance`);
+    return res.data;
+  }
+
+  async recordObservation(deploymentId: string, data: any) {
+    const res = await this.request<any>(`/deployments/${deploymentId}/observations`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data;
+  }
+
+  async recordBaseline(deploymentId: string, data: any) {
+    const res = await this.request<any>(`/deployments/${deploymentId}/baselines`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data;
+  }
+
+  async getRuntimeServices(deploymentId?: string) {
+    const query = deploymentId ? `?deployment_id=${encodeURIComponent(deploymentId)}` : '';
+    const res = await this.request<any[]>(`/runtime/services${query}`);
+    return res.data;
+  }
+
+  async getRuntimeMetrics(deploymentId?: string) {
+    const query = deploymentId ? `?deployment_id=${encodeURIComponent(deploymentId)}` : '';
+    const res = await this.request<any>(`/runtime/metrics${query}`);
+    return res.data;
+  }
+
+  async getRuntimeFindings(params?: { deployment_id?: string; severity?: string }) {
+    const searchParams = new URLSearchParams();
+    if (params?.deployment_id) searchParams.append('deployment_id', params.deployment_id);
+    if (params?.severity) searchParams.append('severity', params.severity);
+    const qs = searchParams.toString();
+    const res = await this.request<any[]>(`/runtime/findings${qs ? `?${qs}` : ''}`);
+    return res.data;
+  }
+
+  async getChangeRuntimeProof(changeId: string, deploymentId?: string) {
+    const query = deploymentId ? `?deployment_id=${encodeURIComponent(deploymentId)}` : '';
+    const res = await this.request<any>(`/changes/${changeId}/runtime${query}`);
+    return res.data;
+  }
+
+  async runCICheck(data: { change_id: string; commit_sha?: string; fail_on_warn?: boolean; publish_github_check?: boolean }) {
+    const res = await this.request<any>('/ci/check', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data;
+  }
 }
 
 export const api = new ApiClient();
+

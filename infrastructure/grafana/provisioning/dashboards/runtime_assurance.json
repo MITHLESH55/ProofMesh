@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "ProofMesh Service Request Volume",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum by (service) (proofmesh_http_requests_total)",
+          "legendFormat": "{{service}} requests",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "title": "Runtime Service Error Rate (%)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "proofmesh_service_error_rate",
+          "legendFormat": "{{service}} error %",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "id": 3,
+      "title": "p95 Request Latency (ms)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "proofmesh_http_latency_p95_ms",
+          "legendFormat": "{{service}} ({{endpoint}})",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["proofmesh", "runtime-assurance"],
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "ProofMesh — Runtime Assurance & Telemetry Health",
+  "uid": "proofmesh-runtime-health",
+  "version": 1
+}

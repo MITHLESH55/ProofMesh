@@ -1,7 +1,9 @@
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
+from app.db.session import SessionLocal
+from app.services.runtime.telemetry_service import TelemetryService
 from app.api.v1.router import api_v1_router
 from app.core.config import settings
 from app.core.errors import ProofMeshError
@@ -15,7 +17,7 @@ setup_logging()
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="ProofMesh — AI-Native Software Change Assurance & Reliability Platform (Phase 1 Foundation)",
+    description="ProofMesh — AI-Native Software Change Assurance & Reliability Platform (Phase 4 CI/CD & Runtime Assurance)",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -104,6 +106,17 @@ async def generic_error_handler(request: Request, exc: Exception):
 app.include_router(api_v1_router, prefix=settings.API_V1_PREFIX)
 
 
+from fastapi import Depends
+from sqlalchemy.orm import Session
+from app.db.session import get_db
+
+@app.get("/metrics", response_class=PlainTextResponse, tags=["Observability"])
+def prometheus_metrics(db: Session = Depends(get_db)):
+    """Exposes Prometheus scrape metrics for live runtime telemetry."""
+    return TelemetryService.generate_prometheus_metrics(db)
+
+
+
 @app.get("/")
 def root():
     return {
@@ -111,5 +124,7 @@ def root():
         "version": settings.APP_VERSION,
         "status": "online",
         "docs": "/docs",
+        "metrics": "/metrics",
         "api_v1": settings.API_V1_PREFIX,
     }
+

@@ -44,6 +44,7 @@ export const Layout: React.FC = () => {
     { to: '/repositories', label: 'Repositories', icon: FolderGit2 },
     { to: '/changes', label: 'Changes', icon: GitPullRequest },
     { to: '/graph', label: 'Dependency Graph', icon: Network },
+    { to: '/runtime', label: 'Runtime Assurance', icon: Activity },
     { to: '/settings', label: 'Settings', icon: SettingsIcon },
   ];
 
@@ -60,8 +61,8 @@ export const Layout: React.FC = () => {
             <div>
               <span className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
                 ProofMesh
-                <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 bg-indigo-950 text-indigo-400 border border-indigo-800/80 rounded">
-                  Phase 3
+                <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 bg-cyan-950 text-cyan-400 border border-cyan-800/80 rounded">
+                  Phase 4
                 </span>
               </span>
             </div>
@@ -146,11 +147,12 @@ export const Layout: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-mono text-indigo-400 px-2 py-1 bg-slate-900 border border-indigo-900/50 rounded">
-              v0.3.0-phase3
+            <span className="text-xs font-mono text-cyan-400 px-2 py-1 bg-slate-900 border border-cyan-900/50 rounded">
+              v0.4.0-phase4
             </span>
           </div>
         </header>
+
 
         <main className="p-8 max-w-7xl w-full mx-auto flex-1">
           <Outlet />

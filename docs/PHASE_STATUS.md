@@ -1,63 +1,69 @@
 # ProofMesh Phase Status
 
-## Phase 1
-Status: VERIFIED
+## Phase 1 — Foundation & Change Ingestion
+Status: **VERIFIED**
 
-### Phase 1 Acceptance Checklist
 - [x] Repository structure
-- [x] Frontend (React + TypeScript + Vite + Tailwind CSS)
+- [x] Frontend (React + TypeScript + Vite)
 - [x] Backend (FastAPI + Pydantic v2 + SQLAlchemy 2)
 - [x] PostgreSQL (Relational schema & migrations)
 - [x] Redis (Queue broker & asynchronous worker)
-- [x] Authentication (JWT tokens, bcrypt password hashing)
-- [x] RBAC (ADMIN, ENGINEER, VIEWER roles & permissions)
-- [x] GitHub integration (GitHub App integration client)
-- [x] Webhook validation (Timing-safe HMAC-SHA256 signature verification)
-- [x] Webhook Idempotency (Delivery ID ledger & deduplication)
-- [x] PR ingestion (`pull_request.opened`, `.synchronize`, `.reopened`, `.closed`)
-- [x] Change lifecycle (`INGESTED` -> `QUEUED` -> `RUNNING` -> `COMPLETED` / `FAILED`)
-- [x] Analysis worker (Asynchronous consumer, lifecycle transitions, retries)
-- [x] Audit logs (Immutable audit event stream with actor, action, metadata)
-- [x] Docker Compose (All services: frontend, backend, worker, postgres, redis)
-- [x] Automated Tests (Unit, API, Integration, and E2E tests passing)
-- [x] Developer Documentation (`README.md`, `ARCHITECTURE.md`, `API.md`, `SECURITY.md`, `DEVELOPMENT.md`, `TESTING.md`)
+- [x] Authentication & RBAC (ADMIN, ENGINEER, VIEWER)
+- [x] GitHub webhook validation & idempotency
+- [x] Change ingestion & lifecycle tracking
+- [x] Audit logging ledger
 
 ---
 
-## Phase 2
-Status: VERIFIED
+## Phase 2 — Code & Dependency Intelligence
+Status: **VERIFIED**
 
-### Phase 2 Acceptance Checklist
-- [x] Multi-language parser (Python, TypeScript/JavaScript, Java, Go AST & symbol extraction)
-- [x] Resilient error handling (Partial structural extraction on syntax errors)
-- [x] Neo4j graph database integration (Driver, pooling, constraints, indexes, health check)
-- [x] Code dependency graph schema (`File`, `Function`, `Class`, `Module`, `Repository` nodes)
-- [x] Relationship graph modeling (`IMPORTS`, `DEFINES`, `HAS_METHOD`, `CALLS`, `INHERITS`)
-- [x] File ingestion service (Parsing source files into graph nodes and relationships)
-- [x] Change impact analysis engine (Multi-hop reverse dependency tracing, affected symbols)
-- [x] Risk scoring & blast radius calculation (Direct, first-order, second-order, transitive)
-- [x] REST API endpoints (`/api/v1/graph/*` for repo graph, file ego, stats, impact, ingestion)
-- [x] Asynchronous worker integration (`DEPENDENCY_ANALYSIS` stage transition)
-- [x] Readiness check integration (Neo4j status included in `/api/v1/ready`)
-- [x] Frontend interactive graph visualizer (Force-directed canvas, zoom, pan, drag)
-- [x] Frontend impact simulation panel & manual file ingestion modal
-- [x] Docker Compose update (Neo4j 5.20 container with health checks and persistence)
-- [x] Automated Tests (33/33 backend tests passing with pytest)
-- [x] Frontend TypeScript build verified (0 errors on `npm run build`)
-- [x] Phase 2 Documentation (`docs/PHASE_2.md`)
+- [x] Multi-language parser (Python, TypeScript/JavaScript AST & symbol extraction)
+- [x] Neo4j graph database integration & relationship modeling
+- [x] File ingestion & dependency extraction
+- [x] Change impact analysis & blast radius calculation
+- [x] REST API endpoints (`/api/v1/graph/*`)
+- [x] Frontend interactive graph visualizer
 
 ---
 
-## Important Future Boundary Notice
+## Phase 3 — AI Assurance & Explainable Risk
+Status: **VERIFIED**
 
-The following capabilities are explicitly **OUT OF SCOPE for Phase 2** and are **NOT IMPLEMENTED YET**:
+- [x] Secret redactor & safe prompt construction
+- [x] AI Provider abstraction with offline deterministic mock provider
+- [x] Change intent extraction & capability categorization
+- [x] Behavioral invariant generator & verification
+- [x] Semantic contract analyzer
+- [x] Security vulnerability analyzer
+- [x] Factor-based composite risk engine (0-100)
+- [x] AI-assisted test recommendation engine
+- [x] Formal Change Proof builder (v1.0.0)
+- [x] Deterministic policy decision engine (PASS / WARN / BLOCK)
+- [x] Frontend Change Proof visualizer
 
-- AI intent analysis (Phase 3)
-- Behavioral invariants (Phase 3)
-- Semantic drift & contract checking (Phase 3)
-- Change Proof generation (Phase 4)
-- CI/CD check runs & gating (Phase 4)
-- Runtime assurance & OpenTelemetry (Phase 5)
-- Kafka, Kubernetes, Autonomous agents (Phase 6+)
+---
 
-Phase 2 successfully completes Code & Dependency Intelligence. Per the instructions, STOP and do not proceed to Phase 3 without explicit instruction.
+## Phase 4 — CI/CD & Runtime Assurance
+Status: **VERIFIED**
+
+- [x] CI/CD Policy Gate (`POST /api/v1/ci/check`)
+- [x] CI Command-Line Interface (`python -m app.cli.check`) with exit codes
+- [x] GitHub Check Run & Commit Status markdown formatting
+- [x] Deployment lifecycle tracking (`deployments` table & API)
+- [x] Runtime telemetry ingestion (`runtime_observations`, `runtime_baselines`)
+- [x] Prometheus scrape endpoint (`/metrics`)
+- [x] Deterministic runtime regression detection (error rate, latency, 5xx rate)
+- [x] Static prediction vs actual runtime traffic correlation
+- [x] Extended Change Proof synthesis (v2.0.0-phase4)
+- [x] Prometheus & Grafana dashboard infrastructure in Docker Compose
+- [x] Frontend Runtime Assurance interface with mock telemetry simulator
+- [x] End-to-end healthy deployment & intentional regression test scenarios
+
+---
+
+## Phase 5 — Autonomous Multi-Agent Reliability & Enterprise Scale
+Status: **NOT STARTED**
+
+Per the master instructions, Phase 5 is strictly **NOT STARTED**.
+Do NOT implement autonomous coding agents, multi-agent orchestration, autonomous remediation, Kafka, or Kubernetes.

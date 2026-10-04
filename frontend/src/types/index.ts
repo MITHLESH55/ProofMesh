@@ -330,3 +330,137 @@ export interface AssuranceOverview {
   proof?: ChangeProof;
 }
 
+// ==========================================
+// PHASE 4 — CI/CD & RUNTIME ASSURANCE TYPES
+// ==========================================
+
+export type DeploymentStatus = 'NOT_DEPLOYED' | 'DEPLOYING' | 'DEPLOYED' | 'CANARY' | 'ROLLED_BACK' | 'FAILED';
+
+export interface Deployment {
+  id: string;
+  repository_id: string;
+  change_id: string;
+  analysis_run_id: string;
+  commit_sha: string;
+  environment: string;
+  status: DeploymentStatus;
+  deployed_at: string;
+  created_at: string;
+}
+
+export interface RuntimeBaseline {
+  id: string;
+  deployment_id: string;
+  service_name: string;
+  endpoint: string;
+  request_rate: number;
+  error_rate: number;
+  p50_latency_ms: number;
+  p95_latency_ms: number;
+  p99_latency_ms: number;
+  sample_window_seconds: number;
+  created_at: string;
+}
+
+export interface RuntimeObservation {
+  id: string;
+  deployment_id: string;
+  service_name: string;
+  endpoint: string;
+  request_count: number;
+  error_count: number;
+  error_rate: number;
+  p50_latency_ms: number;
+  p95_latency_ms: number;
+  p99_latency_ms: number;
+  status_2xx_count: number;
+  status_4xx_count: number;
+  status_5xx_count: number;
+  observed_at: string;
+}
+
+export interface RuntimeFinding {
+  id: string;
+  deployment_id: string;
+  finding_type: string;
+  severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+  service_name: string;
+  endpoint_or_metric: string;
+  baseline_value?: number | null;
+  observed_value?: number | null;
+  threshold_value?: number | null;
+  evidence: string;
+  confidence: number;
+  created_at: string;
+}
+
+export interface ComponentTrafficStatus {
+  service_name: string;
+  predicted_impacted: boolean;
+  observed_traffic: boolean;
+  observed_error_rate: number;
+  observed_p95_ms: number;
+  status: 'MATCH' | 'UNEXPECTED_TRAFFIC' | 'UNEXPECTED_QUIET' | 'REGRESSION';
+}
+
+export interface PredictionVsObservedReport {
+  deployment_id: string;
+  change_id: string;
+  predicted_services: string[];
+  observed_services: string[];
+  components: ComponentTrafficStatus[];
+  summary_match: boolean;
+  discrepancies: string[];
+}
+
+export interface CIAssuranceCheck {
+  id: string;
+  change_id: string;
+  commit_sha: string;
+  gate_decision: 'PASS' | 'WARN' | 'BLOCK' | 'INSUFFICIENT_EVIDENCE';
+  risk_level: string;
+  critical_findings: string[];
+  warning_findings: string[];
+  policy_summary: Record<string, any>;
+  exit_code: number;
+  github_check_id?: string | null;
+  proof_url: string;
+  created_at: string;
+}
+
+export interface ExtendedChangeProof {
+  change_id: string;
+  analysis_run_id: string;
+  deployment_id?: string | null;
+  phase3_decision: string;
+  runtime_decision: 'RUNTIME_VERIFIED' | 'RUNTIME_WARNING' | 'RUNTIME_REGRESSION' | 'INSUFFICIENT_RUNTIME_EVIDENCE';
+  risk_level: string;
+  deployment_evidence?: Record<string, any> | null;
+  runtime_evidence?: Record<string, any> | null;
+  prediction_vs_observed?: PredictionVsObservedReport | null;
+  runtime_findings: RuntimeFinding[];
+  final_combined_verdict: string;
+  auditable_record: Record<string, any>;
+  created_at: string;
+}
+
+export interface RuntimeServiceHealth {
+  service_name: string;
+  status: 'HEALTHY' | 'DEGRADED' | 'FAILING' | 'UNKNOWN';
+  request_rate: number;
+  error_rate: number;
+  p95_latency_ms: number;
+  last_seen?: string | null;
+}
+
+export interface RuntimeMetricsSummary {
+  deployment_id?: string | null;
+  total_requests: number;
+  total_errors: number;
+  overall_error_rate: number;
+  avg_p95_latency_ms: number;
+  services: RuntimeServiceHealth[];
+  findings_count: Record<string, number>;
+}
+
+
