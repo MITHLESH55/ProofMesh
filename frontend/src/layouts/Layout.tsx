@@ -10,6 +10,12 @@ import {
   Settings as SettingsIcon,
   Shield,
   User as UserIcon,
+  Building2,
+  Bot,
+  ShieldCheck,
+  Wrench,
+  BookOpen,
+  FileCheck,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { User } from '../types';
@@ -45,6 +51,12 @@ export const Layout: React.FC = () => {
     { to: '/changes', label: 'Changes', icon: GitPullRequest },
     { to: '/graph', label: 'Dependency Graph', icon: Network },
     { to: '/runtime', label: 'Runtime Assurance', icon: Activity },
+    { to: '/enterprise', label: 'Enterprise', icon: Building2 },
+    { to: '/agents', label: 'Agents', icon: Bot },
+    { to: '/approvals', label: 'Approvals', icon: ShieldCheck },
+    { to: '/remediation', label: 'Remediation', icon: Wrench },
+    { to: '/evidence', label: 'Evidence', icon: BookOpen },
+    { to: '/proof-v3', label: 'Change Proof v3', icon: FileCheck },
     { to: '/settings', label: 'Settings', icon: SettingsIcon },
   ];
 
@@ -52,17 +64,17 @@ export const Layout: React.FC = () => {
     <div className="flex h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Sidebar */}
       <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between shrink-0">
-        <div>
+        <div className="overflow-y-auto">
           {/* Brand Header */}
-          <div className="h-16 flex items-center px-6 border-b border-slate-800 gap-3">
+          <div className="h-16 flex items-center px-6 border-b border-slate-800 gap-3 sticky top-0 bg-slate-900 z-10">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-600 to-indigo-500 flex items-center justify-center text-white font-bold shadow-lg shadow-sky-500/20">
               <Shield className="w-4 h-4" />
             </div>
             <div>
               <span className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
                 ProofMesh
-                <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 bg-cyan-950 text-cyan-400 border border-cyan-800/80 rounded">
-                  Phase 4
+                <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 bg-emerald-950 text-emerald-400 border border-emerald-800/80 rounded">
+                  Phase 5
                 </span>
               </span>
             </div>
@@ -147,8 +159,8 @@ export const Layout: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-mono text-cyan-400 px-2 py-1 bg-slate-900 border border-cyan-900/50 rounded">
-              v0.4.0-phase4
+            <span className="text-xs font-mono text-emerald-400 px-2 py-1 bg-slate-900 border border-emerald-900/50 rounded">
+              v0.5.0-phase5
             </span>
           </div>
         </header>

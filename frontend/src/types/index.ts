@@ -463,4 +463,188 @@ export interface RuntimeMetricsSummary {
   findings_count: Record<string, number>;
 }
 
+// ─── Phase 5 Enterprise Types ───
+
+export interface Team {
+  id: string;
+  organization_id: string;
+  name: string;
+  slug: string;
+  description?: string | null;
+  created_at: string;
+}
+
+export interface EnterpriseService {
+  id: string;
+  organization_id: string;
+  team_id?: string | null;
+  repository_id?: string | null;
+  name: string;
+  criticality: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+  description?: string | null;
+  tier: number;
+  created_at: string;
+}
+
+export interface EnterpriseGraphNode {
+  id: string;
+  label: string;
+  type: string;
+  criticality?: string | null;
+  metadata: Record<string, any>;
+}
+
+export interface EnterpriseGraphEdge {
+  source: string;
+  target: string;
+  type: string;
+  metadata: Record<string, any>;
+}
+
+export interface EnterpriseGraphData {
+  organization_id: string;
+  nodes: EnterpriseGraphNode[];
+  edges: EnterpriseGraphEdge[];
+  total_services: number;
+  total_repositories: number;
+}
+
+export interface EnterpriseOverview {
+  total_organizations: number;
+  total_teams: number;
+  total_repositories: number;
+  total_services: number;
+  critical_services_count: number;
+  total_cross_repo_deps: number;
+  active_incidents_count: number;
+  active_agents_count: number;
+}
+
+export interface HistoricalEvidence {
+  id: string;
+  organization_id: string;
+  repository_id?: string | null;
+  evidence_type: string;
+  title: string;
+  content: string;
+  provenance: Record<string, any>;
+  created_at: string;
+}
+
+export interface EvidenceSearchResult {
+  id: string;
+  evidence_type: string;
+  title: string;
+  content: string;
+  similarity_score: number;
+  provenance: Record<string, any>;
+  created_at: string;
+}
+
+// ─── Phase 5 Agent Governance & Orchestration Types ───
+
+export interface AgentDefinition {
+  id: string;
+  organization_id: string;
+  name: string;
+  agent_type: string;
+  provider: string;
+  model: string;
+  version: string;
+  status: 'ACTIVE' | 'DISABLED' | 'PAUSED';
+  autonomy_level: number;
+  owner_id?: string | null;
+  capabilities: string[];
+  allowed_scopes: Record<string, any>;
+  created_at: string;
+}
+
+export interface AgentTask {
+  id: string;
+  organization_id: string;
+  agent_id: string;
+  change_id: string;
+  analysis_run_id: string;
+  task_type: string;
+  status: 'PENDING' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'BLOCKED';
+  initiator_type: string;
+  initiator_id?: string | null;
+  plan: Record<string, any>;
+  result: Record<string, any>;
+  step_count: number;
+  token_count: number;
+  cost_estimate: number;
+  started_at?: string | null;
+  completed_at?: string | null;
+  created_at: string;
+}
+
+export interface AgentAction {
+  id: string;
+  task_id: string;
+  agent_id: string;
+  organization_id: string;
+  repository_id?: string | null;
+  change_id?: string | null;
+  analysis_run_id?: string | null;
+  action_type: string;
+  requested_capability: string;
+  tool_name: string;
+  input_summary: Record<string, any>;
+  output_summary: Record<string, any>;
+  policy_decision: string;
+  status: string;
+  created_at: string;
+}
+
+export interface AgentApproval {
+  id: string;
+  organization_id: string;
+  task_id?: string | null;
+  change_id: string;
+  requesting_agent_id: string;
+  requested_action: string;
+  risk_level: string;
+  affected_resources: string[];
+  evidence_summary: Record<string, any>;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED' | 'EXPIRED';
+  approver_user_id?: string | null;
+  decision_reason?: string | null;
+  decided_at?: string | null;
+  created_at: string;
+}
+
+export interface RemediationProposal {
+  id: string;
+  organization_id: string;
+  change_id: string;
+  agent_id: string;
+  title: string;
+  description: string;
+  original_risk_score: number;
+  original_risk_level: string;
+  proposed_diff: string;
+  explanation: string;
+  affected_components: string[];
+  verified_risk_score: number;
+  verified_risk_level: string;
+  verification_status: 'PENDING' | 'VERIFIED_SAFER' | 'REJECTED_REGRESSION' | 'FAILED_VERIFICATION';
+  verification_evidence: Record<string, any>;
+  approval_id?: string | null;
+  created_at: string;
+}
+
+export interface ChangeProofV3 {
+  id: string;
+  change_id: string;
+  analysis_run_id: string;
+  version: string;
+  overall_verdict: string;
+  risk_level: string;
+  risk_score: number;
+  proof_document: Record<string, any>;
+  created_at: string;
+}
+
+
 
