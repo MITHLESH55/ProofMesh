@@ -1,6 +1,6 @@
 """Phase 4 Schema — Deployments, Runtime Telemetry, Observations, Baselines, Findings & CI Gates
 
-Revision ID: 003_phase4_runtime_assurance_schema
+Revision ID: 003_phase4_runtime_schema
 Revises: 002_phase3_assurance_schema
 Create Date: 2026-10-05 03:00:00.000000
 
@@ -10,7 +10,7 @@ from alembic import op
 import sqlalchemy as sa
 
 # revision identifiers, used by Alembic.
-revision: str = "003_phase4_runtime_assurance_schema"
+revision: str = "003_phase4_runtime_schema"
 down_revision: Union[str, None] = "002_phase3_assurance_schema"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
