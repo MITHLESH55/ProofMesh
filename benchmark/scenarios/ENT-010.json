@@ -1,0 +1,24 @@
+{
+  "id": "ENT-010",
+  "title": "Safe security patch in shared encryption utility",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Safe security patch in shared encryption utility",
+  "input": {
+    "changed_files": [
+      "crypto-lib/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Safe security patch in shared encryption utility",
+    "commit_description": "Safe security patch in shared encryption utility",
+    "has_tests_modified": true,
+    "blast_radius": 3,
+    "enterprise_context": {
+      "source_repo": "crypto-lib",
+      "downstream": [
+        "auth-service",
+        "payment-service"
+      ],
+      "is_breaking": false
+    }
+  }
+}

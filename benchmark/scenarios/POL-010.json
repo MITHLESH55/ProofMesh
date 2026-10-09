@@ -1,0 +1,17 @@
+{
+  "id": "POL-010",
+  "title": "Compatible feature extension with complete tests",
+  "category": "policy_decisions",
+  "description": "Compatible feature extension with complete tests",
+  "input": {
+    "changed_files": [
+      "app/api/items.py",
+      "tests/test_items.py"
+    ],
+    "diff_text": "+ @router.get(\"/api/v1/items\")",
+    "commit_title": "Compatible feature extension with complete tests",
+    "commit_description": "Compatible feature extension with complete tests",
+    "has_tests_modified": true,
+    "blast_radius": 2
+  }
+}

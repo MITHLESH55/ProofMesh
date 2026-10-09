@@ -1,0 +1,17 @@
+{
+  "id": "RISK-009",
+  "title": "Caching Service Redis Adapter with Unit Test",
+  "category": "risk_classification",
+  "description": "Updates caching adapter with moderate blast radius accompanied by unit tests",
+  "input": {
+    "changed_files": [
+      "app/services/cache.py",
+      "tests/test_cache.py"
+    ],
+    "diff_text": "+ def set_cache(k, v):\n+     redis_client.setex(k, 300, v)",
+    "commit_title": "Update redis cache expiration timeout",
+    "commit_description": "Sets standard 300 second TTL on cached objects",
+    "has_tests_modified": true,
+    "blast_radius": 5
+  }
+}

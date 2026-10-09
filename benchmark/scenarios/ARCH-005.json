@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-005",
+  "title": "Additive POST /api/v1/telemetry/events route",
+  "category": "architecture_violations",
+  "description": "Compatible backwards-compatible telemetry route",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "+ @router.post(\"/api/v1/telemetry/events\")",
+    "commit_title": "Additive POST /api/v1/telemetry/events route",
+    "commit_description": "Compatible backwards-compatible telemetry route",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

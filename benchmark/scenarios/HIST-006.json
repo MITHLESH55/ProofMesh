@@ -1,0 +1,19 @@
+{
+  "id": "HIST-006",
+  "title": "Cross-tenant authorization boundary data leak",
+  "category": "historical_evidence_retrieval",
+  "description": "Cross-tenant authorization boundary data leak",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Cross-tenant authorization boundary data leak",
+    "commit_description": "Cross-tenant authorization boundary data leak",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "cross-tenant authorization boundary isolation data leak"
+    }
+  }
+}

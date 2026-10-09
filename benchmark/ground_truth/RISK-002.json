@@ -1,0 +1,15 @@
+{
+  "id": "RISK-002",
+  "category": "risk_classification",
+  "expected_risk_level": "HIGH",
+  "expected_policy_decision": "WARN",
+  "is_security_violation": false,
+  "expected_security_category": null,
+  "has_architecture_violation": false,
+  "has_missing_tests": true,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "APPROVAL_REQUIRED",
+  "expected_impacted_files_count": 8,
+  "relevant_historical_match": "INC-2025-12",
+  "rationale": "Database model modification with moderate blast radius elevates risk score to HIGH."
+}

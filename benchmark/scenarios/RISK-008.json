@@ -1,0 +1,16 @@
+{
+  "id": "RISK-008",
+  "title": "Alembic Database Migration Script with Schema Changes",
+  "category": "risk_classification",
+  "description": "Adds migration script modifying multiple relational constraints",
+  "input": {
+    "changed_files": [
+      "backend/alembic/versions/004_migration.py"
+    ],
+    "diff_text": "+ op.alter_column('users', 'email', nullable=True)",
+    "commit_title": "Alembic migration to alter user email nullability",
+    "commit_description": "Update table columns via migration script",
+    "has_tests_modified": true,
+    "blast_radius": 12
+  }
+}

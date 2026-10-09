@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-010",
+  "title": "Schema definition field modification",
+  "category": "architecture_violations",
+  "description": "Modifies schema spec with potential contract drift",
+  "input": {
+    "changed_files": [
+      "app/models/entities.py"
+    ],
+    "diff_text": "+ # schema contract update for records",
+    "commit_title": "Schema definition field modification",
+    "commit_description": "Modifies schema spec with potential contract drift",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

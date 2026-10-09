@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-002",
+  "title": "Update project README guide",
+  "category": "safe_low_risk_changes",
+  "description": "Update project README guide",
+  "input": {
+    "changed_files": [
+      "README.md"
+    ],
+    "diff_text": "+ Run `npm run dev` to launch frontend.",
+    "commit_title": "Update project README guide",
+    "commit_description": "Update project README guide",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

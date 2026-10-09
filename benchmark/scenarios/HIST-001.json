@@ -1,0 +1,19 @@
+{
+  "id": "HIST-001",
+  "title": "SQL injection in authentication query",
+  "category": "historical_evidence_retrieval",
+  "description": "SQL injection in authentication query",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "SQL injection in authentication query",
+    "commit_description": "SQL injection in authentication query",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "SQL injection raw user query bypass"
+    }
+  }
+}

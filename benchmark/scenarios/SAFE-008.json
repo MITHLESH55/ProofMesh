@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-008",
+  "title": "Update changelog release notes",
+  "category": "safe_low_risk_changes",
+  "description": "Update changelog release notes",
+  "input": {
+    "changed_files": [
+      "CHANGELOG.md"
+    ],
+    "diff_text": "+ ## [v0.5.0] - Phase 5 Enterprise Assurance",
+    "commit_title": "Update changelog release notes",
+    "commit_description": "Update changelog release notes",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

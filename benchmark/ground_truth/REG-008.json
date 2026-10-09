@@ -1,0 +1,15 @@
+{
+  "id": "REG-008",
+  "category": "runtime_regressions",
+  "expected_risk_level": "HIGH",
+  "expected_policy_decision": "WARN",
+  "is_security_violation": false,
+  "expected_security_category": null,
+  "has_architecture_violation": false,
+  "has_missing_tests": false,
+  "has_runtime_regression": true,
+  "expected_governance_decision": "APPROVAL_REQUIRED",
+  "expected_impacted_files_count": 2,
+  "relevant_historical_match": "INC-2025-19",
+  "rationale": "Observed telemetry compared against baseline thresholds flags runtime_regression=True."
+}

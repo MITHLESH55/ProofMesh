@@ -1,0 +1,16 @@
+{
+  "id": "TEST-003",
+  "title": "Password hashing algorithm modified without test",
+  "category": "missing_test_detection",
+  "description": "Password hashing algorithm modified without test",
+  "input": {
+    "changed_files": [
+      "app/core/security.py"
+    ],
+    "diff_text": "+ # Update logic in app/core/security.py",
+    "commit_title": "Password hashing algorithm modified without test",
+    "commit_description": "Refactor component app/core/security.py",
+    "has_tests_modified": false,
+    "blast_radius": 6
+  }
+}

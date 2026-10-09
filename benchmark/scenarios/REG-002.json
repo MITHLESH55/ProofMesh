@@ -1,0 +1,24 @@
+{
+  "id": "REG-002",
+  "title": "High Latency Spike to 520ms p95",
+  "category": "runtime_regressions",
+  "description": "High Latency Spike to 520ms p95",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "High Latency Spike to 520ms p95",
+    "commit_description": "High Latency Spike to 520ms p95",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.3,
+      "obs_err": 0.3,
+      "base_p95": 110.0,
+      "obs_p95": 520.0,
+      "reqs": 1000,
+      "errs": 3
+    }
+  }
+}

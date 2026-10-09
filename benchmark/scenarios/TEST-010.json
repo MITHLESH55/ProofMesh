@@ -1,0 +1,16 @@
+{
+  "id": "TEST-010",
+  "title": "Multi-tenant tenant separator updated without test",
+  "category": "missing_test_detection",
+  "description": "Multi-tenant tenant separator updated without test",
+  "input": {
+    "changed_files": [
+      "app/core/tenant_context.py"
+    ],
+    "diff_text": "+ # Update logic in app/core/tenant_context.py",
+    "commit_title": "Multi-tenant tenant separator updated without test",
+    "commit_description": "Refactor component app/core/tenant_context.py",
+    "has_tests_modified": false,
+    "blast_radius": 8
+  }
+}

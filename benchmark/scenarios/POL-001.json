@@ -1,0 +1,14 @@
+{
+  "id": "POL-001",
+  "title": "Zero Evidence Provided",
+  "category": "policy_decisions",
+  "description": "Zero Evidence Provided",
+  "input": {
+    "changed_files": [],
+    "diff_text": "",
+    "commit_title": "Zero Evidence Provided",
+    "commit_description": "Zero Evidence Provided",
+    "has_tests_modified": false,
+    "blast_radius": 0
+  }
+}

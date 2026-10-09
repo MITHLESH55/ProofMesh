@@ -1,0 +1,17 @@
+{
+  "id": "POL-009",
+  "title": "Clean bug fix with passing tests",
+  "category": "policy_decisions",
+  "description": "Clean bug fix with passing tests",
+  "input": {
+    "changed_files": [
+      "app/services/calc.py",
+      "tests/test_calc.py"
+    ],
+    "diff_text": "+ return a + b",
+    "commit_title": "Clean bug fix with passing tests",
+    "commit_description": "Clean bug fix with passing tests",
+    "has_tests_modified": true,
+    "blast_radius": 2
+  }
+}

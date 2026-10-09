@@ -1,0 +1,17 @@
+{
+  "id": "TEST-007",
+  "title": "Payment refund updated with unit tests",
+  "category": "missing_test_detection",
+  "description": "Payment refund updated with unit tests",
+  "input": {
+    "changed_files": [
+      "app/services/billing/refund.py",
+      "tests/refund.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/billing/refund.py",
+    "commit_title": "Payment refund updated with unit tests",
+    "commit_description": "Refactor component app/services/billing/refund.py",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

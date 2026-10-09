@@ -1,0 +1,16 @@
+{
+  "id": "DEP-010",
+  "title": "Global application settings schema",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies Pydantic settings config imported by 18 modules",
+  "input": {
+    "changed_files": [
+      "app/core/config.py"
+    ],
+    "diff_text": "+ # Update app/core/config.py logic",
+    "commit_title": "Global application settings schema",
+    "commit_description": "Modifies Pydantic settings config imported by 18 modules",
+    "has_tests_modified": true,
+    "blast_radius": 18
+  }
+}

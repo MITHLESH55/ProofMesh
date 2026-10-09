@@ -1,0 +1,16 @@
+{
+  "id": "RISK-006",
+  "title": "README Markdown Update and Badge Links",
+  "category": "risk_classification",
+  "description": "Adds build status badges and installation instructions",
+  "input": {
+    "changed_files": [
+      "README.md"
+    ],
+    "diff_text": "+ [![Build Status](https://github.com/org/repo/actions/badge.svg)](actions)",
+    "commit_title": "Add build status badge to README",
+    "commit_description": "Update documentation links and quickstart steps",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

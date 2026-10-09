@@ -1,0 +1,16 @@
+{
+  "id": "DEP-007",
+  "title": "Global structured logging engine",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies root logger configuration imported by 15 modules",
+  "input": {
+    "changed_files": [
+      "app/core/logging.py"
+    ],
+    "diff_text": "+ # Update app/core/logging.py logic",
+    "commit_title": "Global structured logging engine",
+    "commit_description": "Modifies root logger configuration imported by 15 modules",
+    "has_tests_modified": true,
+    "blast_radius": 15
+  }
+}

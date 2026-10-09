@@ -1,0 +1,17 @@
+{
+  "id": "RISK-004",
+  "title": "Date Helper Utility Enhancement with Test Suite",
+  "category": "risk_classification",
+  "description": "Adds date formatting helpers with 4 dependents and unit tests",
+  "input": {
+    "changed_files": [
+      "app/utils/date_helper.py",
+      "tests/test_date_helper.py"
+    ],
+    "diff_text": "+ def format_iso8601(dt):\n+     return dt.isoformat()",
+    "commit_title": "Add ISO8601 date formatter helper",
+    "commit_description": "Standardize timestamp formatting across utilities",
+    "has_tests_modified": true,
+    "blast_radius": 4
+  }
+}

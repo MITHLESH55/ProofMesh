@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-002",
+  "title": "Removed POST /api/v1/auth/token endpoint",
+  "category": "architecture_violations",
+  "description": "Breaking deletion of primary authentication route",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "- @router.post(\"/api/v1/auth/token\")",
+    "commit_title": "Removed POST /api/v1/auth/token endpoint",
+    "commit_description": "Breaking deletion of primary authentication route",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

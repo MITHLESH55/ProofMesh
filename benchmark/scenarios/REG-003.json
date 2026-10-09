@@ -1,0 +1,24 @@
+{
+  "id": "REG-003",
+  "title": "Elevated Error Rate Spike to 3.1%",
+  "category": "runtime_regressions",
+  "description": "Elevated Error Rate Spike to 3.1%",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Elevated Error Rate Spike to 3.1%",
+    "commit_description": "Elevated Error Rate Spike to 3.1%",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.5,
+      "obs_err": 3.1,
+      "base_p95": 120.0,
+      "obs_p95": 130.0,
+      "reqs": 1000,
+      "errs": 31
+    }
+  }
+}

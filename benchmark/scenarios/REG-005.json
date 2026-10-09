@@ -1,0 +1,24 @@
+{
+  "id": "REG-005",
+  "title": "Steady Health within Baseline",
+  "category": "runtime_regressions",
+  "description": "Steady Health within Baseline",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Steady Health within Baseline",
+    "commit_description": "Steady Health within Baseline",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.4,
+      "obs_err": 0.2,
+      "base_p95": 95.0,
+      "obs_p95": 90.0,
+      "reqs": 1000,
+      "errs": 2
+    }
+  }
+}

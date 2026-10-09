@@ -1,0 +1,15 @@
+{
+  "id": "RISK-001",
+  "category": "risk_classification",
+  "expected_risk_level": "CRITICAL",
+  "expected_policy_decision": "WARN",
+  "is_security_violation": false,
+  "expected_security_category": null,
+  "has_architecture_violation": false,
+  "has_missing_tests": true,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "APPROVAL_REQUIRED",
+  "expected_impacted_files_count": 12,
+  "relevant_historical_match": null,
+  "rationale": "Critical component modified without tests and high blast radius produces CRITICAL risk score."
+}

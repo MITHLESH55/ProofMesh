@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-008",
+  "title": "Additive GET /api/v1/agents/metrics route",
+  "category": "architecture_violations",
+  "description": "Compatible route addition for monitoring agents",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "+ @router.get(\"/api/v1/agents/metrics\")",
+    "commit_title": "Additive GET /api/v1/agents/metrics route",
+    "commit_description": "Compatible route addition for monitoring agents",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

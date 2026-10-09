@@ -1,0 +1,19 @@
+{
+  "id": "HIST-007",
+  "title": "Missing database migration table scan index",
+  "category": "historical_evidence_retrieval",
+  "description": "Missing database migration table scan index",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Missing database migration table scan index",
+    "commit_description": "Missing database migration table scan index",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "missing database migration index full table scan latency"
+    }
+  }
+}

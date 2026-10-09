@@ -1,0 +1,16 @@
+{
+  "id": "POL-004",
+  "title": "Behavioral Invariant Violation in auth",
+  "category": "policy_decisions",
+  "description": "Behavioral Invariant Violation in auth",
+  "input": {
+    "changed_files": [
+      "app/services/auth.py"
+    ],
+    "diff_text": "- def authorize(): return False\n+ def authorize(): return True",
+    "commit_title": "Behavioral Invariant Violation in auth",
+    "commit_description": "Behavioral Invariant Violation in auth",
+    "has_tests_modified": false,
+    "blast_radius": 4
+  }
+}

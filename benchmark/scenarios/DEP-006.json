@@ -1,0 +1,16 @@
+{
+  "id": "DEP-006",
+  "title": "Shared HTTP client wrapper",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies HTTP client used by 8 client integration services",
+  "input": {
+    "changed_files": [
+      "app/core/http_client.py"
+    ],
+    "diff_text": "+ # Update app/core/http_client.py logic",
+    "commit_title": "Shared HTTP client wrapper",
+    "commit_description": "Modifies HTTP client used by 8 client integration services",
+    "has_tests_modified": true,
+    "blast_radius": 8
+  }
+}

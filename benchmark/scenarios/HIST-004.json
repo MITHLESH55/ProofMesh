@@ -1,0 +1,19 @@
+{
+  "id": "HIST-004",
+  "title": "Canary deployment latency regression p95 spike",
+  "category": "historical_evidence_retrieval",
+  "description": "Canary deployment latency regression p95 spike",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Canary deployment latency regression p95 spike",
+    "commit_description": "Canary deployment latency regression p95 spike",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "canary deployment latency regression p95 spike degradation"
+    }
+  }
+}

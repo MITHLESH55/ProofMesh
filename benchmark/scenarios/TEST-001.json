@@ -1,0 +1,16 @@
+{
+  "id": "TEST-001",
+  "title": "Auth MFA logic modified without test",
+  "category": "missing_test_detection",
+  "description": "Auth MFA logic modified without test",
+  "input": {
+    "changed_files": [
+      "app/services/auth/mfa.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/auth/mfa.py",
+    "commit_title": "Auth MFA logic modified without test",
+    "commit_description": "Refactor component app/services/auth/mfa.py",
+    "has_tests_modified": false,
+    "blast_radius": 8
+  }
+}

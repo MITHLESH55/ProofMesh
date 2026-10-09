@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-010",
+  "title": "Fix grammatical errors in error message string",
+  "category": "safe_low_risk_changes",
+  "description": "Fix grammatical errors in error message string",
+  "input": {
+    "changed_files": [
+      "app/core/errors.py"
+    ],
+    "diff_text": "+ USER_NOT_FOUND = 'The specified user was not found.'",
+    "commit_title": "Fix grammatical errors in error message string",
+    "commit_description": "Fix grammatical errors in error message string",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

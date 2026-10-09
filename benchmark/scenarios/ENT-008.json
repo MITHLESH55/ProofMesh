@@ -1,0 +1,23 @@
+{
+  "id": "ENT-008",
+  "title": "Telemetry format update in centralized logger",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Telemetry format update in centralized logger",
+  "input": {
+    "changed_files": [
+      "logger-sdk/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Telemetry format update in centralized logger",
+    "commit_description": "Telemetry format update in centralized logger",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "enterprise_context": {
+      "source_repo": "logger-sdk",
+      "downstream": [
+        "service-alpha"
+      ],
+      "is_breaking": false
+    }
+  }
+}

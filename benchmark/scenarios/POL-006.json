@@ -1,0 +1,16 @@
+{
+  "id": "POL-006",
+  "title": "Potentially breaking schema contract update",
+  "category": "policy_decisions",
+  "description": "Potentially breaking schema contract update",
+  "input": {
+    "changed_files": [
+      "app/models/records.py"
+    ],
+    "diff_text": "+ # delete cascade records",
+    "commit_title": "Potentially breaking schema contract update",
+    "commit_description": "Potentially breaking schema contract update",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

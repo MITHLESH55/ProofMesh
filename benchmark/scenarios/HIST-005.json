@@ -1,0 +1,19 @@
+{
+  "id": "HIST-005",
+  "title": "Hardcoded plaintext JWT secret key committed",
+  "category": "historical_evidence_retrieval",
+  "description": "Hardcoded plaintext JWT secret key committed",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Hardcoded plaintext JWT secret key committed",
+    "commit_description": "Hardcoded plaintext JWT secret key committed",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "hardcoded plaintext JWT secret key credential leak"
+    }
+  }
+}

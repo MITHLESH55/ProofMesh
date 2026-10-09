@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-006",
+  "title": "Removed DELETE /api/v1/repositories/{id} route",
+  "category": "architecture_violations",
+  "description": "Breaking route removal from repositories API",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "- @router.delete(\"/api/v1/repositories/{id}\")",
+    "commit_title": "Removed DELETE /api/v1/repositories/{id} route",
+    "commit_description": "Breaking route removal from repositories API",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

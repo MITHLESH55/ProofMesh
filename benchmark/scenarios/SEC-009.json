@@ -1,0 +1,16 @@
+{
+  "id": "SEC-009",
+  "title": "SQL Injection via string modulo format operator",
+  "category": "security_violations",
+  "description": "Uses legacy % string operator to interpolate table name into raw SQL execute",
+  "input": {
+    "changed_files": [
+      "app/services/maintenance.py"
+    ],
+    "diff_text": "+ def vacuum_table(name):\n+     db.execute(\"SELECT %s\" % name)",
+    "commit_title": "Add table maintenance helper",
+    "commit_description": "Execute diagnostic query with modulo string operator",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

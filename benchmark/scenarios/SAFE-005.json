@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-005",
+  "title": "Add explanatory comments to algorithm",
+  "category": "safe_low_risk_changes",
+  "description": "Add explanatory comments to algorithm",
+  "input": {
+    "changed_files": [
+      "app/services/math.py"
+    ],
+    "diff_text": "+ # Step 1: Normalize vector inputs",
+    "commit_title": "Add explanatory comments to algorithm",
+    "commit_description": "Add explanatory comments to algorithm",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

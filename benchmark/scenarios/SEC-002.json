@@ -1,0 +1,16 @@
+{
+  "id": "SEC-002",
+  "title": "Hardcoded JWT Secret Key in configuration",
+  "category": "security_violations",
+  "description": "Commits plain-text cryptographic JWT signing secret into config file",
+  "input": {
+    "changed_files": [
+      "app/core/config.py"
+    ],
+    "diff_text": "+ JWT_SECRET_KEY = \"super_secret_jwt_signing_key_12345_production\"\n+ ALGORITHM = \"HS256\"",
+    "commit_title": "Add default signing key for local and production tokens",
+    "commit_description": "Static signing secret simplifies local token generation",
+    "has_tests_modified": false,
+    "blast_radius": 5
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "SEC-007",
+  "title": "Authorization Bypass using pass in is_authorized checker",
+  "category": "security_violations",
+  "description": "Replaces permissions check with pass and returns True",
+  "input": {
+    "changed_files": [
+      "app/services/security/authorizer.py"
+    ],
+    "diff_text": "- def is_authorized(token, permission):\n-     return validator.verify(token, permission)\n+ def is_authorized(token, permission):\n+     pass\n+     return True",
+    "commit_title": "Simplify permission verification routine",
+    "commit_description": "Skip token signature verification during integration test",
+    "has_tests_modified": false,
+    "blast_radius": 6
+  }
+}

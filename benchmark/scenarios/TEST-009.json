@@ -1,0 +1,17 @@
+{
+  "id": "TEST-009",
+  "title": "API webhook dispatcher added with test",
+  "category": "missing_test_detection",
+  "description": "API webhook dispatcher added with test",
+  "input": {
+    "changed_files": [
+      "app/api/webhooks.py",
+      "tests/webhooks.py"
+    ],
+    "diff_text": "+ # Update logic in app/api/webhooks.py",
+    "commit_title": "API webhook dispatcher added with test",
+    "commit_description": "Refactor component app/api/webhooks.py",
+    "has_tests_modified": true,
+    "blast_radius": 2
+  }
+}

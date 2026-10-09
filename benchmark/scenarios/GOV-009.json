@@ -1,0 +1,25 @@
+{
+  "id": "GOV-009",
+  "title": "Agent attempting cross-tenant resource access",
+  "category": "agent_governance_approval",
+  "description": "Agent attempting cross-tenant resource access",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Agent attempting cross-tenant resource access",
+    "commit_description": "Agent attempting cross-tenant resource access",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 3,
+      "requested_capability": "READ_REPOSITORY",
+      "requester_id": "agent-9",
+      "approver_id": "human-1",
+      "tokens": 1000,
+      "runtime_s": 10,
+      "tenant_mismatch": true
+    }
+  }
+}

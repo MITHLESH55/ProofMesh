@@ -1,0 +1,16 @@
+{
+  "id": "POL-002",
+  "title": "Critical SQL Injection in query",
+  "category": "policy_decisions",
+  "description": "Critical SQL Injection in query",
+  "input": {
+    "changed_files": [
+      "app/api/users.py"
+    ],
+    "diff_text": "+ db.execute(f\"SELECT * FROM users WHERE name = '{name}'\")",
+    "commit_title": "Critical SQL Injection in query",
+    "commit_description": "Critical SQL Injection in query",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

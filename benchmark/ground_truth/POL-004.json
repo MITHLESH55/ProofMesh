@@ -1,0 +1,15 @@
+{
+  "id": "POL-004",
+  "category": "policy_decisions",
+  "expected_risk_level": "CRITICAL",
+  "expected_policy_decision": "BLOCK",
+  "is_security_violation": true,
+  "expected_security_category": "AUTHORIZATION_BYPASS",
+  "has_architecture_violation": false,
+  "has_missing_tests": false,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "BLOCKED",
+  "expected_impacted_files_count": 4,
+  "relevant_historical_match": null,
+  "rationale": "Deterministic policy engine rules render decision=BLOCK."
+}

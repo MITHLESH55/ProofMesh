@@ -1,0 +1,19 @@
+{
+  "id": "HIST-003",
+  "title": "Breaking API contract in payment webhook",
+  "category": "historical_evidence_retrieval",
+  "description": "Breaking API contract in payment webhook",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Breaking API contract in payment webhook",
+    "commit_description": "Breaking API contract in payment webhook",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "breaking API contract payment webhook endpoint removed"
+    }
+  }
+}

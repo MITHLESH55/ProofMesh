@@ -1,0 +1,19 @@
+{
+  "id": "HIST-010",
+  "title": "Permissive CORS origin wildcard header vulnerability",
+  "category": "historical_evidence_retrieval",
+  "description": "Permissive CORS origin wildcard header vulnerability",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Permissive CORS origin wildcard header vulnerability",
+    "commit_description": "Permissive CORS origin wildcard header vulnerability",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "permissive CORS wildcard origin header unauthorized access"
+    }
+  }
+}

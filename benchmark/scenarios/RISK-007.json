@@ -1,0 +1,16 @@
+{
+  "id": "RISK-007",
+  "title": "Authentication Endpoint Route Handler Update",
+  "category": "risk_classification",
+  "description": "Modifies auth route handler with high blast radius and missing tests",
+  "input": {
+    "changed_files": [
+      "app/api/auth.py"
+    ],
+    "diff_text": "+ def issue_token():\n+     return {'token': 'dummy'}",
+    "commit_title": "Update auth token controller logic",
+    "commit_description": "Modifies authentication token issuance pipeline",
+    "has_tests_modified": false,
+    "blast_radius": 15
+  }
+}

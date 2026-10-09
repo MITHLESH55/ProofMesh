@@ -1,0 +1,16 @@
+{
+  "id": "DEP-008",
+  "title": "Standalone diagnostic CLI script",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies diagnostic script with 1 dependent",
+  "input": {
+    "changed_files": [
+      "scripts/export_metrics.py"
+    ],
+    "diff_text": "+ # Update scripts/export_metrics.py logic",
+    "commit_title": "Standalone diagnostic CLI script",
+    "commit_description": "Modifies diagnostic script with 1 dependent",
+    "has_tests_modified": true,
+    "blast_radius": 1
+  }
+}

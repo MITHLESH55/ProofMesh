@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-001",
+  "title": "Fix typos in docstrings",
+  "category": "safe_low_risk_changes",
+  "description": "Fix typos in docstrings",
+  "input": {
+    "changed_files": [
+      "app/utils/helpers.py"
+    ],
+    "diff_text": "+ \"\"\"Calculate standard moving average.\"\"\"",
+    "commit_title": "Fix typos in docstrings",
+    "commit_description": "Fix typos in docstrings",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "ENT-008",
+  "category": "multi_repository_enterprise_changes",
+  "expected_risk_level": "LOW",
+  "expected_policy_decision": "PASS",
+  "is_security_violation": false,
+  "expected_security_category": null,
+  "has_architecture_violation": false,
+  "has_missing_tests": false,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "ALLOWED",
+  "expected_impacted_files_count": 2,
+  "relevant_historical_match": null,
+  "rationale": "Enterprise dependency analysis renders verdict=PASS with risk=LOW."
+}

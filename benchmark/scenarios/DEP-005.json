@@ -1,0 +1,16 @@
+{
+  "id": "DEP-005",
+  "title": "Email HTML template modification",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies static email template with 1 dependent",
+  "input": {
+    "changed_files": [
+      "app/templates/invite.html"
+    ],
+    "diff_text": "+ # Update app/templates/invite.html logic",
+    "commit_title": "Email HTML template modification",
+    "commit_description": "Modifies static email template with 1 dependent",
+    "has_tests_modified": true,
+    "blast_radius": 1
+  }
+}
