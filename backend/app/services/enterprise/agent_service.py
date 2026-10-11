@@ -10,6 +10,8 @@ Provides the full agent lifecycle:
 - Change Proof v3 assembly unifying all assurance signals
 """
 from datetime import datetime, timezone
+import hashlib
+import json
 from typing import Any, Dict, List, Optional
 
 from sqlalchemy.orm import Session
@@ -21,6 +23,7 @@ from app.models.agent import (
     AgentApproval,
     RemediationProposal,
     ChangeProofV3,
+    generate_uuid,
 )
 from app.models.entities import Change, AnalysisRun
 from app.models.assurance import RiskAssessment, ChangeProof, PolicyDecision
@@ -413,12 +416,60 @@ class AgentTaskOrchestrator:
 
 
 class AgentActionLedger:
-    """Immutable audit trail of every tool call and operation performed by agents."""
+    """Immutable audit trail of every tool call and operation performed by agents.
+
+    Entries form a per-organization SHA-256 hash chain: each entry's hash commits
+    to the previous entry's hash, so any retroactive edit, reorder, or deletion
+    of a historical record breaks verification. This realizes the "audit tampering
+    -> integrity hashes + append-oriented audit" control from the threat model.
+    """
+
+    @staticmethod
+    def _canonical_ts(dt: datetime) -> str:
+        """Timezone-stable timestamp string (UTC, microsecond precision).
+
+        Normalizes so the hash is identical whether the datetime is read back as
+        timezone-aware (Postgres) or naive-UTC (SQLite)."""
+        if dt.tzinfo is not None:
+            dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+        return dt.isoformat(timespec="microseconds")
+
+    @staticmethod
+    def _compute_entry_hash(action: AgentAction, previous_hash: str) -> str:
+        """Deterministically hash the immutable fields of an action entry."""
+        payload = {
+            "id": action.id,
+            "chain_index": action.chain_index,
+            "previous_hash": previous_hash,
+            "task_id": action.task_id,
+            "agent_id": action.agent_id,
+            "organization_id": action.organization_id,
+            "action_type": action.action_type,
+            "requested_capability": action.requested_capability,
+            "tool_name": action.tool_name,
+            "input_summary": action.input_summary,
+            "output_summary": action.output_summary,
+            "policy_decision": action.policy_decision,
+            "status": action.status,
+            "created_at": AgentActionLedger._canonical_ts(action.created_at),
+        }
+        canonical = json.dumps(payload, sort_keys=True, default=str)
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
     @staticmethod
     def record_action(db: Session, data: AgentActionCreate) -> AgentAction:
-        """Record a single agent action in the immutable ledger."""
+        """Record a single agent action, chained to the organization's prior entry."""
+        prev = (
+            db.query(AgentAction)
+            .filter(AgentAction.organization_id == data.organization_id)
+            .order_by(AgentAction.chain_index.desc())
+            .first()
+        )
+        previous_hash = prev.entry_hash if prev and prev.entry_hash else "GENESIS"
+        next_index = (prev.chain_index + 1) if prev and prev.chain_index is not None else 0
+
         action = AgentAction(
+            id=generate_uuid(),
             task_id=data.task_id,
             agent_id=data.agent_id,
             organization_id=data.organization_id,
@@ -434,10 +485,39 @@ class AgentActionLedger:
             status=data.status.upper(),
             created_at=datetime.now(timezone.utc),
         )
+        action.chain_index = next_index
+        action.previous_hash = previous_hash
+        action.entry_hash = AgentActionLedger._compute_entry_hash(action, previous_hash)
         db.add(action)
         db.commit()
         db.refresh(action)
         return action
+
+    @staticmethod
+    def verify_chain(db: Session, organization_id: str) -> Dict[str, Any]:
+        """Recompute the hash chain for an organization and detect tampering.
+
+        Returns a report with the chain length, whether it is intact, and the
+        id of the first entry (if any) at which verification failed.
+        """
+        actions = (
+            db.query(AgentAction)
+            .filter(AgentAction.organization_id == organization_id)
+            .order_by(AgentAction.chain_index.asc())
+            .all()
+        )
+        previous_hash = "GENESIS"
+        for action in actions:
+            if action.previous_hash != previous_hash:
+                return {"organization_id": organization_id, "length": len(actions),
+                        "valid": False, "broken_at": action.id, "reason": "previous_hash_mismatch"}
+            recomputed = AgentActionLedger._compute_entry_hash(action, previous_hash)
+            if recomputed != action.entry_hash:
+                return {"organization_id": organization_id, "length": len(actions),
+                        "valid": False, "broken_at": action.id, "reason": "entry_hash_mismatch"}
+            previous_hash = action.entry_hash
+        return {"organization_id": organization_id, "length": len(actions),
+                "valid": True, "broken_at": None, "reason": None}
 
     @staticmethod
     def list_actions(

@@ -92,6 +92,11 @@ class AgentAction(Base):
     output_summary = Column(JSON, nullable=False, default=dict)
     policy_decision = Column(String(50), nullable=False, default="ALLOWED")  # ALLOWED, BLOCKED, PENDING_APPROVAL
     status = Column(String(50), nullable=False, default="SUCCESS")  # SUCCESS, FAILED, BLOCKED
+    # Tamper-evident hash chain (per organization): each entry commits to the
+    # previous entry's hash, so any retroactive edit or deletion is detectable.
+    chain_index = Column(Integer, nullable=True)
+    previous_hash = Column(String(64), nullable=True)
+    entry_hash = Column(String(64), nullable=True, index=True)
     created_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
 
     agent = relationship("AgentDefinition", back_populates="actions")

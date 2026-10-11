@@ -404,6 +404,22 @@ def list_actions(
     )
 
 
+@router.get("/ledger/verify", summary="Verify Action Ledger Integrity")
+def verify_ledger(
+    request: Request,
+    organization_id: str = Query(..., description="Organization whose ledger chain to verify"),
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Recompute the organization's SHA-256 action-ledger hash chain and report
+    whether it is intact (tamper-evident integrity check)."""
+    report = AgentActionLedger.verify_chain(db, organization_id=organization_id)
+    return SuccessEnvelope(
+        data=report,
+        request_id=getattr(request.state, "request_id", "req_ledger_verify"),
+    )
+
+
 # ─── Approvals ───
 
 @router.post("/approvals", response_model=SuccessEnvelope[AgentApprovalResponse], summary="Request Approval")
