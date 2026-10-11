@@ -22,6 +22,12 @@ jobs:
       - name: Run Backend & E2E Tests
         run: |
           python -m pytest tests -v
+      - name: Run Controlled Benchmark (110 scenarios)
+        run: |
+          python benchmark/runner.py
+      - name: Run Demo-Enterprise Seeded Scenarios
+        run: |
+          python proofmesh-demo-enterprise/run_scenarios.py
 
   frontend-build:
     runs-on: ubuntu-latest

@@ -1,6 +1,6 @@
 # ProofMesh Phase 5 Controlled Benchmark Report
 
-**Benchmark Execution Date**: 2026-10-07 19:06:47Z  
+**Benchmark Execution Date**: 2026-10-11 11:42:04Z  
 **Total Scenarios Evaluated**: 110  
 **Assurance Engine Architecture**: Deterministic Offline AI Provider (`MockAIProvider`)  
 **Status**: **BENCHMARK COMPLETE & VERIFIED**
@@ -60,10 +60,10 @@ Analysis latency was measured using high-resolution monotonic clocks (`time.perf
 | Latency Metric | Measured Duration | Target SLA |
 | :--- | :---: | :---: |
 | **Minimum Scenario Latency** | `0.010 ms` | < 10.0 ms |
-| **Mean Scenario Latency** | `0.036 ms` | < 25.0 ms |
-| **Median (p50) Scenario Latency** | `0.024 ms` | < 20.0 ms |
-| **95th Percentile (p95) Latency** | `0.122 ms` | < 50.0 ms |
-| **Maximum Scenario Latency** | `0.253 ms` | < 100.0 ms |
+| **Mean Scenario Latency** | `0.035 ms` | < 25.0 ms |
+| **Median (p50) Scenario Latency** | `0.022 ms` | < 20.0 ms |
+| **95th Percentile (p95) Latency** | `0.120 ms` | < 50.0 ms |
+| **Maximum Scenario Latency** | `0.237 ms` | < 100.0 ms |
 
 ---
 
