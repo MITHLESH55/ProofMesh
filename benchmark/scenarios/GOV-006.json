@@ -1,0 +1,24 @@
+{
+  "id": "GOV-006",
+  "title": "Agent task exceeding token budget limit",
+  "category": "agent_governance_approval",
+  "description": "Agent task exceeding token budget limit",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Agent task exceeding token budget limit",
+    "commit_description": "Agent task exceeding token budget limit",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 3,
+      "requested_capability": "READ_REPOSITORY",
+      "requester_id": "agent-6",
+      "approver_id": "human-1",
+      "tokens": 650000,
+      "runtime_s": 10
+    }
+  }
+}

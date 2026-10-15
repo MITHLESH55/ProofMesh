@@ -1,0 +1,24 @@
+{
+  "id": "GOV-001",
+  "title": "Level 1 Agent attempting PROPOSE_PATCH",
+  "category": "agent_governance_approval",
+  "description": "Level 1 Agent attempting PROPOSE_PATCH",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Level 1 Agent attempting PROPOSE_PATCH",
+    "commit_description": "Level 1 Agent attempting PROPOSE_PATCH",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 1,
+      "requested_capability": "PROPOSE_PATCH",
+      "requester_id": "agent-1",
+      "approver_id": "human-1",
+      "tokens": 1000,
+      "runtime_s": 10
+    }
+  }
+}

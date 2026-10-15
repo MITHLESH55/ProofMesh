@@ -1,0 +1,20 @@
+{
+  "id": "ENT-009",
+  "title": "Service ownership reassigned across enterprise teams",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Service ownership reassigned across enterprise teams",
+  "input": {
+    "changed_files": [
+      "catalog-service/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Service ownership reassigned across enterprise teams",
+    "commit_description": "Service ownership reassigned across enterprise teams",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "enterprise_context": {
+      "source_repo": "catalog-service",
+      "owner_change": true
+    }
+  }
+}

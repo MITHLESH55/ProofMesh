@@ -34,6 +34,23 @@ from app.models.runtime import (
     RuntimeFinding,
     CIAssuranceCheck,
 )
+from app.models.enterprise import (
+    Team,
+    Service,
+    ComponentOwnership,
+    CrossRepoDependency,
+    EnterpriseGraphVersion,
+    HistoricalEvidence,
+    IncidentRecord,
+)
+from app.models.agent import (
+    AgentDefinition,
+    AgentTask,
+    AgentAction,
+    AgentApproval,
+    RemediationProposal,
+    ChangeProofV3,
+)
 
 __all__ = [
     "Base",
@@ -66,4 +83,18 @@ __all__ = [
     "RuntimeObservation",
     "RuntimeFinding",
     "CIAssuranceCheck",
+    "Team",
+    "Service",
+    "ComponentOwnership",
+    "CrossRepoDependency",
+    "EnterpriseGraphVersion",
+    "HistoricalEvidence",
+    "IncidentRecord",
+    "AgentDefinition",
+    "AgentTask",
+    "AgentAction",
+    "AgentApproval",
+    "RemediationProposal",
+    "ChangeProofV3",
 ]
+

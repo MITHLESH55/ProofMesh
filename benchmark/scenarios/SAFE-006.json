@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-006",
+  "title": "Update copyright header comments",
+  "category": "safe_low_risk_changes",
+  "description": "Update copyright header comments",
+  "input": {
+    "changed_files": [
+      "app/core/license.py"
+    ],
+    "diff_text": "+ # Copyright 2026 ProofMesh Inc.",
+    "commit_title": "Update copyright header comments",
+    "commit_description": "Update copyright header comments",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

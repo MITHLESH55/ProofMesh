@@ -12,6 +12,14 @@ import { Settings } from '../pages/Settings';
 import { DependencyGraph } from '../pages/DependencyGraph';
 import { AssuranceView } from '../pages/AssuranceView';
 import { RuntimeAssurance } from '../pages/RuntimeAssurance';
+import { EnterpriseOverview } from '../pages/EnterpriseOverview';
+import { EnterpriseGraph } from '../pages/EnterpriseGraph';
+import { AgentCenter } from '../pages/AgentCenter';
+import { AgentTaskDetail } from '../pages/AgentTaskDetail';
+import { ApprovalCenter } from '../pages/ApprovalCenter';
+import { RemediationCenter } from '../pages/RemediationCenter';
+import { HistoricalEvidence } from '../pages/HistoricalEvidence';
+import { ChangeProofV3View } from '../pages/ChangeProofV3View';
 
 export const App: React.FC = () => {
   return (
@@ -31,6 +39,16 @@ export const App: React.FC = () => {
           <Route path="/graph/:repoId" element={<DependencyGraph />} />
           <Route path="/assurance/:id" element={<AssuranceView />} />
           <Route path="/runtime" element={<RuntimeAssurance />} />
+          <Route path="/enterprise" element={<EnterpriseOverview />} />
+          <Route path="/enterprise/graph" element={<EnterpriseGraph />} />
+          <Route path="/agents" element={<AgentCenter />} />
+          <Route path="/agents/tasks" element={<AgentTaskDetail />} />
+          <Route path="/agents/tasks/:taskId" element={<AgentTaskDetail />} />
+          <Route path="/approvals" element={<ApprovalCenter />} />
+          <Route path="/remediation" element={<RemediationCenter />} />
+          <Route path="/evidence" element={<HistoricalEvidence />} />
+          <Route path="/proof-v3" element={<ChangeProofV3View />} />
+          <Route path="/proof-v3/:changeId" element={<ChangeProofV3View />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
 
@@ -39,4 +57,5 @@ export const App: React.FC = () => {
     </Router>
   );
 };
+
 

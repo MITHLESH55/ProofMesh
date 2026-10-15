@@ -1,0 +1,24 @@
+{
+  "id": "REG-009",
+  "title": "Normal Telemetry Jitter within Limits",
+  "category": "runtime_regressions",
+  "description": "Normal Telemetry Jitter within Limits",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Normal Telemetry Jitter within Limits",
+    "commit_description": "Normal Telemetry Jitter within Limits",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.3,
+      "obs_err": 0.3,
+      "base_p95": 120.0,
+      "obs_p95": 125.0,
+      "reqs": 1000,
+      "errs": 3
+    }
+  }
+}

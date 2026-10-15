@@ -1,0 +1,19 @@
+{
+  "id": "HIST-002",
+  "title": "Database connection pool exhaustion leak",
+  "category": "historical_evidence_retrieval",
+  "description": "Database connection pool exhaustion leak",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Database connection pool exhaustion leak",
+    "commit_description": "Database connection pool exhaustion leak",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "database connection pool exhaustion leak timeout"
+    }
+  }
+}

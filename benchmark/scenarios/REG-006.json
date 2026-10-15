@@ -1,0 +1,24 @@
+{
+  "id": "REG-006",
+  "title": "Steady Health Zero Degradation",
+  "category": "runtime_regressions",
+  "description": "Steady Health Zero Degradation",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Steady Health Zero Degradation",
+    "commit_description": "Steady Health Zero Degradation",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.3,
+      "obs_err": 0.1,
+      "base_p95": 80.0,
+      "obs_p95": 78.0,
+      "reqs": 1000,
+      "errs": 1
+    }
+  }
+}

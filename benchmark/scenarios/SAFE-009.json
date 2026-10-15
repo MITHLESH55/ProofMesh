@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-009",
+  "title": "Bump dev linter in package.json",
+  "category": "safe_low_risk_changes",
+  "description": "Bump dev linter in package.json",
+  "input": {
+    "changed_files": [
+      "frontend/package.json"
+    ],
+    "diff_text": "+ \"eslint\": \"^8.57.0\"",
+    "commit_title": "Bump dev linter in package.json",
+    "commit_description": "Bump dev linter in package.json",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "RISK-001",
+  "title": "Critical Auth Service Refactoring with Wide Impact",
+  "category": "risk_classification",
+  "description": "Modifies token verification in auth service affecting 12 downstream components",
+  "input": {
+    "changed_files": [
+      "app/services/auth/jwt.py"
+    ],
+    "diff_text": "+ def refresh_token(token):\n+     return jwt.decode(token, verify=False)",
+    "commit_title": "Update JWT token decoding routines",
+    "commit_description": "Changes token verification and claims extraction",
+    "has_tests_modified": false,
+    "blast_radius": 12
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "TEST-002",
+  "title": "Payment charge computation modified without test",
+  "category": "missing_test_detection",
+  "description": "Payment charge computation modified without test",
+  "input": {
+    "changed_files": [
+      "app/services/billing/charge.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/billing/charge.py",
+    "commit_title": "Payment charge computation modified without test",
+    "commit_description": "Refactor component app/services/billing/charge.py",
+    "has_tests_modified": false,
+    "blast_radius": 5
+  }
+}

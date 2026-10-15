@@ -1,0 +1,16 @@
+{
+  "id": "POL-008",
+  "title": "High blast radius change with elevated risk",
+  "category": "policy_decisions",
+  "description": "High blast radius change with elevated risk",
+  "input": {
+    "changed_files": [
+      "app/models/core.py"
+    ],
+    "diff_text": "+ # Update core persistence models",
+    "commit_title": "High blast radius change with elevated risk",
+    "commit_description": "High blast radius change with elevated risk",
+    "has_tests_modified": false,
+    "blast_radius": 15
+  }
+}

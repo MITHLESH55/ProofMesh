@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-009",
+  "title": "Cascading delete on database entity",
+  "category": "architecture_violations",
+  "description": "Introduces cascading delete in database model",
+  "input": {
+    "changed_files": [
+      "app/models/entities.py"
+    ],
+    "diff_text": "+ # delete cascade foreign records",
+    "commit_title": "Cascading delete on database entity",
+    "commit_description": "Introduces cascading delete in database model",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

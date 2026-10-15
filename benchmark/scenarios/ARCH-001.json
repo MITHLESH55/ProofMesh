@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-001",
+  "title": "Removed GET /api/v1/organizations route",
+  "category": "architecture_violations",
+  "description": "Breaking route deletion from public REST API",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "- @router.get(\"/api/v1/organizations\")",
+    "commit_title": "Removed GET /api/v1/organizations route",
+    "commit_description": "Breaking route deletion from public REST API",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

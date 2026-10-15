@@ -1,0 +1,16 @@
+{
+  "id": "SEC-003",
+  "title": "Authorization Bypass returning True unconditionally",
+  "category": "security_violations",
+  "description": "Replaces tenant role validation with unconditional True return",
+  "input": {
+    "changed_files": [
+      "app/services/auth/checker.py"
+    ],
+    "diff_text": "- def authorize(user, role):\n-     return user.role == role and user.is_active\n+ def authorize(user, role):\n+     return True",
+    "commit_title": "Bypass authorization check for debugging permissions",
+    "commit_description": "Temporary workaround to allow unverified access",
+    "has_tests_modified": false,
+    "blast_radius": 8
+  }
+}

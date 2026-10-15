@@ -1,0 +1,16 @@
+{
+  "id": "DEP-002",
+  "title": "Shared string formatting helper",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies text formatter imported by 4 downstream modules",
+  "input": {
+    "changed_files": [
+      "app/core/formatters.py"
+    ],
+    "diff_text": "+ # Update app/core/formatters.py logic",
+    "commit_title": "Shared string formatting helper",
+    "commit_description": "Modifies text formatter imported by 4 downstream modules",
+    "has_tests_modified": true,
+    "blast_radius": 4
+  }
+}

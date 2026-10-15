@@ -1,0 +1,16 @@
+{
+  "id": "TEST-008",
+  "title": "OAuth token exchange modified without test",
+  "category": "missing_test_detection",
+  "description": "OAuth token exchange modified without test",
+  "input": {
+    "changed_files": [
+      "app/services/auth/oauth.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/auth/oauth.py",
+    "commit_title": "OAuth token exchange modified without test",
+    "commit_description": "Refactor component app/services/auth/oauth.py",
+    "has_tests_modified": false,
+    "blast_radius": 6
+  }
+}

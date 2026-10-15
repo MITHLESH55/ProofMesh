@@ -1,0 +1,17 @@
+{
+  "id": "TEST-005",
+  "title": "Auth validator updated with accompanying test",
+  "category": "missing_test_detection",
+  "description": "Auth validator updated with accompanying test",
+  "input": {
+    "changed_files": [
+      "app/services/auth/validator.py",
+      "tests/validator.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/auth/validator.py",
+    "commit_title": "Auth validator updated with accompanying test",
+    "commit_description": "Refactor component app/services/auth/validator.py",
+    "has_tests_modified": true,
+    "blast_radius": 4
+  }
+}

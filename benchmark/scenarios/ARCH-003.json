@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-003",
+  "title": "Cascading deletion rule introduced",
+  "category": "architecture_violations",
+  "description": "Introduces cascade delete behavioral side effect",
+  "input": {
+    "changed_files": [
+      "app/models/entities.py"
+    ],
+    "diff_text": "+ # delete cascade records from storage",
+    "commit_title": "Cascading deletion rule introduced",
+    "commit_description": "Introduces cascade delete behavioral side effect",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

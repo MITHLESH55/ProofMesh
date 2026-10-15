@@ -1,0 +1,16 @@
+{
+  "id": "POL-005",
+  "title": "High-severity security finding without criticals",
+  "category": "policy_decisions",
+  "description": "High-severity security finding without criticals",
+  "input": {
+    "changed_files": [
+      "app/api/admin.py"
+    ],
+    "diff_text": "+ @router.delete(\"/admin/keys\")\n+ def del_keys(): pass",
+    "commit_title": "High-severity security finding without criticals",
+    "commit_description": "High-severity security finding without criticals",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

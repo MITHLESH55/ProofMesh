@@ -1,0 +1,24 @@
+{
+  "id": "GOV-005",
+  "title": "Level 4 Agent performing authorized READ_GRAPH",
+  "category": "agent_governance_approval",
+  "description": "Level 4 Agent performing authorized READ_GRAPH",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Level 4 Agent performing authorized READ_GRAPH",
+    "commit_description": "Level 4 Agent performing authorized READ_GRAPH",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 4,
+      "requested_capability": "READ_GRAPH",
+      "requester_id": "agent-5",
+      "approver_id": "human-1",
+      "tokens": 1000,
+      "runtime_s": 10
+    }
+  }
+}

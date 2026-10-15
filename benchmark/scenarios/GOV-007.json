@@ -1,0 +1,24 @@
+{
+  "id": "GOV-007",
+  "title": "Agent task exceeding execution runtime limit",
+  "category": "agent_governance_approval",
+  "description": "Agent task exceeding execution runtime limit",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Agent task exceeding execution runtime limit",
+    "commit_description": "Agent task exceeding execution runtime limit",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 3,
+      "requested_capability": "READ_REPOSITORY",
+      "requester_id": "agent-7",
+      "approver_id": "human-1",
+      "tokens": 1000,
+      "runtime_s": 2400
+    }
+  }
+}

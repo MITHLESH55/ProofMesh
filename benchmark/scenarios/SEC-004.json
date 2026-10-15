@@ -1,0 +1,16 @@
+{
+  "id": "SEC-004",
+  "title": "Privileged Admin route missing authentication dependency",
+  "category": "security_violations",
+  "description": "Adds privileged deletion endpoint without Depends(get_current_user)",
+  "input": {
+    "changed_files": [
+      "app/api/admin.py"
+    ],
+    "diff_text": "+ @router.delete(\"/admin/tenants/{tenant_id}\")\n+ def delete_tenant(tenant_id: str):\n+     return {\"deleted\": tenant_id}",
+    "commit_title": "Expose tenant deletion admin route",
+    "commit_description": "Enables tenant cleanup via administrative endpoint",
+    "has_tests_modified": false,
+    "blast_radius": 3
+  }
+}

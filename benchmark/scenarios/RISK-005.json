@@ -1,0 +1,16 @@
+{
+  "id": "RISK-005",
+  "title": "API Guide Markdown Documentation Clarification",
+  "category": "risk_classification",
+  "description": "Documentation only modification with isolated blast radius",
+  "input": {
+    "changed_files": [
+      "docs/api_guide.md"
+    ],
+    "diff_text": "+ Note: Ensure Authorization header Bearer token is provided.",
+    "commit_title": "Clarify bearer token usage in API guide",
+    "commit_description": "Update markdown documentation with authorization instructions",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

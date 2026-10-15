@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-007",
+  "title": "Removed PUT /api/v1/users/{id} endpoint",
+  "category": "architecture_violations",
+  "description": "Breaking route removal breaking mobile client contract",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "- @router.put(\"/api/v1/users/{id}\")",
+    "commit_title": "Removed PUT /api/v1/users/{id} endpoint",
+    "commit_description": "Breaking route removal breaking mobile client contract",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-004",
+  "title": "Update .gitignore for editor artifacts",
+  "category": "safe_low_risk_changes",
+  "description": "Update .gitignore for editor artifacts",
+  "input": {
+    "changed_files": [
+      ".gitignore"
+    ],
+    "diff_text": "+ .vscode/\n+ *.swp",
+    "commit_title": "Update .gitignore for editor artifacts",
+    "commit_description": "Update .gitignore for editor artifacts",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

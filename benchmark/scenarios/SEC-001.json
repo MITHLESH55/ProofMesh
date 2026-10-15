@@ -1,0 +1,16 @@
+{
+  "id": "SEC-001",
+  "title": "SQL Injection via raw f-string interpolation",
+  "category": "security_violations",
+  "description": "Direct string formatting into execute() query without parameterization",
+  "input": {
+    "changed_files": [
+      "app/api/users.py"
+    ],
+    "diff_text": "- query = db.query(User).filter(User.username == name)\n+ query = db.execute(f\"SELECT * FROM users WHERE username = '{name}'\")",
+    "commit_title": "Optimize user query by executing raw SQL string",
+    "commit_description": "Direct execution bypasses ORM overhead",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

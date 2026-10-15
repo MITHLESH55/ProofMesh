@@ -1,0 +1,19 @@
+{
+  "id": "HIST-008",
+  "title": "Autonomous agent runaway loop budget exceeded",
+  "category": "historical_evidence_retrieval",
+  "description": "Autonomous agent runaway loop budget exceeded",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Autonomous agent runaway loop budget exceeded",
+    "commit_description": "Autonomous agent runaway loop budget exceeded",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "autonomous agent runaway loop task token budget exceeded"
+    }
+  }
+}

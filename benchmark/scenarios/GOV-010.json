@@ -1,0 +1,24 @@
+{
+  "id": "GOV-010",
+  "title": "Authorized human approval granted for remediation",
+  "category": "agent_governance_approval",
+  "description": "Authorized human approval granted for remediation",
+  "input": {
+    "changed_files": [
+      "app/services/agent_worker.py"
+    ],
+    "diff_text": "+ # Agent task invocation",
+    "commit_title": "Authorized human approval granted for remediation",
+    "commit_description": "Authorized human approval granted for remediation",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "agent_request": {
+      "autonomy_level": 5,
+      "requested_capability": "APPLY_REMEDIATION",
+      "requester_id": "agent-10",
+      "approver_id": "human-admin",
+      "tokens": 1000,
+      "runtime_s": 10
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "RISK-003",
+  "title": "Billing Invoice Calculator with Comprehensive Tests",
+  "category": "risk_classification",
+  "description": "Modifies billing logic with blast radius 6 but accompanied by unit tests",
+  "input": {
+    "changed_files": [
+      "app/services/billing/invoice.py",
+      "tests/test_invoice.py"
+    ],
+    "diff_text": "+ def compute_tax(subtotal, rate):\n+     return round(subtotal * rate, 2)",
+    "commit_title": "Update invoice tax rounding calculation",
+    "commit_description": "Ensure rounding complies with two-decimal accounting standards",
+    "has_tests_modified": true,
+    "blast_radius": 6
+  }
+}

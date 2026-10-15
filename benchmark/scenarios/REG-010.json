@@ -1,0 +1,24 @@
+{
+  "id": "REG-010",
+  "title": "Zero Telemetry Observations Received",
+  "category": "runtime_regressions",
+  "description": "Zero Telemetry Observations Received",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Zero Telemetry Observations Received",
+    "commit_description": "Zero Telemetry Observations Received",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.5,
+      "obs_err": 0.0,
+      "base_p95": 120.0,
+      "obs_p95": 0.0,
+      "reqs": 0,
+      "errs": 0
+    }
+  }
+}

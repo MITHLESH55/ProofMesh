@@ -1,0 +1,16 @@
+{
+  "id": "DEP-001",
+  "title": "Isolated API leaf node change",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies health endpoint with 0 downstream dependents",
+  "input": {
+    "changed_files": [
+      "app/api/health.py"
+    ],
+    "diff_text": "+ # Update app/api/health.py logic",
+    "commit_title": "Isolated API leaf node change",
+    "commit_description": "Modifies health endpoint with 0 downstream dependents",
+    "has_tests_modified": true,
+    "blast_radius": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ARCH-004",
+  "title": "Additive GET /api/v1/health/ping route",
+  "category": "architecture_violations",
+  "description": "Compatible backwards-compatible route extension",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "+ @router.get(\"/api/v1/health/ping\")",
+    "commit_title": "Additive GET /api/v1/health/ping route",
+    "commit_description": "Compatible backwards-compatible route extension",
+    "has_tests_modified": true,
+    "blast_radius": 3
+  }
+}

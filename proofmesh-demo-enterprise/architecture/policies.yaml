@@ -1,0 +1,81 @@
+# ProofMesh Demo Enterprise — Architecture & Security Policy Manifest
+#
+# These are deterministic, version-controlled constraints that the assurance
+# layer enforces REGARDLESS of what the AI reasoning layer proposes.
+# Principle: "AI proposes, evidence verifies, policy decides."
+#
+# Each policy is evaluated against the files + diff of a candidate change.
+# A violation at CRITICAL severity forces a BLOCK; HIGH forces at least REVIEW.
+
+version: "1.0.0"
+
+services:
+  gateway:      { layer: edge,        owns_db: null }
+  auth:         { layer: platform,    owns_db: auth-db }
+  user:         { layer: platform,    owns_db: user-db }
+  order:        { layer: domain,      owns_db: order-db }
+  payment:      { layer: domain,      owns_db: payment-db }
+  inventory:    { layer: domain,      owns_db: inventory-db }
+  notification: { layer: supporting,  owns_db: null }
+  analytics:    { layer: supporting,  owns_db: analytics-db }
+  audit:        { layer: supporting,  owns_db: audit-db }
+
+policies:
+  - id: AUTH-001
+    type: architecture
+    severity: critical
+    description: >
+      No service may connect directly to the auth database. Identity data is
+      owned exclusively by the auth service and must be accessed via its API.
+    rule: forbidden_db_access
+    source_services: [gateway, user, order, payment, inventory, notification, analytics]
+    forbidden_target_db: auth-db
+    detect:
+      # A violation is any new line that opens a raw connection or query against
+      # the auth database from a service that does not own it.
+      any_substring:
+        - "auth-db"
+        - "auth_db"
+        - "from services.auth.db"
+        - "connect(\"auth"
+
+  - id: API-004
+    type: architecture
+    severity: high
+    description: >
+      Public endpoints must be reached through the API gateway. Domain services
+      must not expose externally routable admin endpoints directly.
+    rule: forbidden_public_admin_route
+    detect:
+      all_substrings:
+        - "@router."
+        - "admin"
+      and_not_substring: "Depends("
+
+  - id: DATA-007
+    type: security
+    severity: critical
+    description: >
+      Personally identifiable information (PII) must never be written to the
+      analytics store. Analytics may only receive anonymized / aggregated data.
+    rule: forbidden_pii_sink
+    target_services: [analytics]
+    detect:
+      all_substrings:
+        - "analytics"
+      pii_substrings:
+        - "email"
+        - "ssn"
+        - "full_name"
+        - "phone_number"
+
+  - id: DATA-012
+    type: architecture
+    severity: high
+    description: >
+      Relational schema changes (model/migration edits) must ship with a
+      corresponding Alembic migration to preserve backward compatibility.
+    rule: schema_change_requires_migration
+    detect:
+      model_file_substrings: ["models.py", "schema.py"]
+      migration_path_substring: "migration"

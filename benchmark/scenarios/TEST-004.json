@@ -1,0 +1,16 @@
+{
+  "id": "TEST-004",
+  "title": "Database migration adding constraints without test",
+  "category": "missing_test_detection",
+  "description": "Database migration adding constraints without test",
+  "input": {
+    "changed_files": [
+      "backend/alembic/versions/migration.py"
+    ],
+    "diff_text": "+ # Update logic in backend/alembic/versions/migration.py",
+    "commit_title": "Database migration adding constraints without test",
+    "commit_description": "Refactor component backend/alembic/versions/migration.py",
+    "has_tests_modified": false,
+    "blast_radius": 7
+  }
+}

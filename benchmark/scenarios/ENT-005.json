@@ -1,0 +1,24 @@
+{
+  "id": "ENT-005",
+  "title": "Payment service change affecting checkout and billing",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Payment service change affecting checkout and billing",
+  "input": {
+    "changed_files": [
+      "payment-service/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Payment service change affecting checkout and billing",
+    "commit_description": "Payment service change affecting checkout and billing",
+    "has_tests_modified": true,
+    "blast_radius": 3,
+    "enterprise_context": {
+      "source_repo": "payment-service",
+      "downstream": [
+        "checkout-service",
+        "billing-service"
+      ],
+      "is_breaking": false
+    }
+  }
+}

@@ -11,7 +11,7 @@ from app.models.entities import AnalysisRun, AnalysisStatus, Change, ChangeStatu
 from app.repositories.analysis_repository import AnalysisRepository
 from app.repositories.change_repository import ChangeRepository
 from app.services.audit.service import AuditService
-from app.services.jobs.queue import job_queue
+from app.services.jobs.queue import job_queue, BLPOP_BLOCK_TIMEOUT
 
 
 class AnalysisWorker:
@@ -181,7 +181,8 @@ class AnalysisWorker:
 
             return False
 
-    def process_next_job(self, timeout: int = 2) -> bool:
+    def process_next_job(self, timeout: int = BLPOP_BLOCK_TIMEOUT) -> bool:
+        """Pop and process one job.  Returns True if a job was processed."""
         job_data = job_queue.pop_analysis(timeout=timeout)
         if not job_data:
             return False
@@ -196,9 +197,10 @@ class AnalysisWorker:
         logger.info(f"Starting ProofMesh Analysis Worker: {self.worker_id}")
         while self.running:
             try:
-                processed = self.process_next_job(timeout=2)
-                if not processed:
-                    time.sleep(0.5)
+                # process_next_job calls blpop which already blocks for
+                # BLPOP_BLOCK_TIMEOUT seconds when the queue is empty.
+                # No extra sleep is needed for idle — blpop IS the wait.
+                self.process_next_job()
             except Exception as e:
                 logger.error(f"Unexpected worker loop exception: {str(e)}", exc_info=True)
                 time.sleep(1.0)

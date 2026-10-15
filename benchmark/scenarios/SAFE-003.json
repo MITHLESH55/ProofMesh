@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-003",
+  "title": "Add unit test case to test suite",
+  "category": "safe_low_risk_changes",
+  "description": "Add unit test case to test suite",
+  "input": {
+    "changed_files": [
+      "tests/test_helpers.py"
+    ],
+    "diff_text": "+ def test_average(): assert avg([2, 4]) == 3",
+    "commit_title": "Add unit test case to test suite",
+    "commit_description": "Add unit test case to test suite",
+    "has_tests_modified": true,
+    "blast_radius": 1
+  }
+}

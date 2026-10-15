@@ -1,0 +1,27 @@
+{
+  "id": "ENT-007",
+  "title": "Core database schema repository wide update",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Core database schema repository wide update",
+  "input": {
+    "changed_files": [
+      "shared-db/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Core database schema repository wide update",
+    "commit_description": "Core database schema repository wide update",
+    "has_tests_modified": true,
+    "blast_radius": 6,
+    "enterprise_context": {
+      "source_repo": "shared-db",
+      "downstream": [
+        "svc-1",
+        "svc-2",
+        "svc-3",
+        "svc-4",
+        "svc-5"
+      ],
+      "is_breaking": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "POL-003",
+  "title": "Breaking API Contract endpoint removal",
+  "category": "policy_decisions",
+  "description": "Breaking API Contract endpoint removal",
+  "input": {
+    "changed_files": [
+      "app/api/routes.py"
+    ],
+    "diff_text": "- @router.get(\"/api/v1/projects\")",
+    "commit_title": "Breaking API Contract endpoint removal",
+    "commit_description": "Breaking API Contract endpoint removal",
+    "has_tests_modified": false,
+    "blast_radius": 3
+  }
+}

@@ -17,7 +17,7 @@ setup_logging()
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="ProofMesh — AI-Native Software Change Assurance & Reliability Platform (Phase 4 CI/CD & Runtime Assurance)",
+    description="ProofMesh — AI-Native Software Change Assurance & Reliability Platform (Phase 5 Enterprise & Agentic Assurance)",
     docs_url="/docs",
     redoc_url="/redoc",
 )

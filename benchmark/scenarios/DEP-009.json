@@ -1,0 +1,16 @@
+{
+  "id": "DEP-009",
+  "title": "Cache adapter interface",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies cache abstraction with 6 dependent services",
+  "input": {
+    "changed_files": [
+      "app/services/cache_adapter.py"
+    ],
+    "diff_text": "+ # Update app/services/cache_adapter.py logic",
+    "commit_title": "Cache adapter interface",
+    "commit_description": "Modifies cache abstraction with 6 dependent services",
+    "has_tests_modified": true,
+    "blast_radius": 6
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ENT-002",
+  "title": "Shared Proto Schema package breaking change",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Shared Proto Schema package breaking change",
+  "input": {
+    "changed_files": [
+      "common-proto/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Shared Proto Schema package breaking change",
+    "commit_description": "Shared Proto Schema package breaking change",
+    "has_tests_modified": true,
+    "blast_radius": 3,
+    "enterprise_context": {
+      "source_repo": "common-proto",
+      "downstream": [
+        "order-service",
+        "inventory-service"
+      ],
+      "is_breaking": true
+    }
+  }
+}

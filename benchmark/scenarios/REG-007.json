@@ -1,0 +1,24 @@
+{
+  "id": "REG-007",
+  "title": "Critical Error Rate Spike to 14.5%",
+  "category": "runtime_regressions",
+  "description": "Critical Error Rate Spike to 14.5%",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Critical Error Rate Spike to 14.5%",
+    "commit_description": "Critical Error Rate Spike to 14.5%",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.5,
+      "obs_err": 14.5,
+      "base_p95": 100.0,
+      "obs_p95": 120.0,
+      "reqs": 1000,
+      "errs": 145
+    }
+  }
+}

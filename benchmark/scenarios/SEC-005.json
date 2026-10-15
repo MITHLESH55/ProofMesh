@@ -1,0 +1,16 @@
+{
+  "id": "SEC-005",
+  "title": "SQL Injection in Report Exporter query interpolation",
+  "category": "security_violations",
+  "description": "Raw SQL f-string query in data export service",
+  "input": {
+    "changed_files": [
+      "app/services/reports.py"
+    ],
+    "diff_text": "+ sql = f\"SELECT id, email, role FROM users WHERE org_id = '{org_id}'\"\n+ result = db.execute(f\"SELECT * FROM ({sql})\")",
+    "commit_title": "Add direct SQL query for report extraction",
+    "commit_description": "Export organization user metrics via raw SQL",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

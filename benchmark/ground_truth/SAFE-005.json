@@ -1,0 +1,15 @@
+{
+  "id": "SAFE-005",
+  "category": "safe_low_risk_changes",
+  "expected_risk_level": "LOW",
+  "expected_policy_decision": "PASS",
+  "is_security_violation": false,
+  "expected_security_category": null,
+  "has_architecture_violation": false,
+  "has_missing_tests": false,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "ALLOWED",
+  "expected_impacted_files_count": 1,
+  "relevant_historical_match": null,
+  "rationale": "Non-functional, documentation, or trivial formatting changes are deterministically classified as LOW risk."
+}

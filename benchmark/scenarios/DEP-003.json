@@ -1,0 +1,16 @@
+{
+  "id": "DEP-003",
+  "title": "Base database entity class",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies base model imported by 14 downstream entity files",
+  "input": {
+    "changed_files": [
+      "app/models/base.py"
+    ],
+    "diff_text": "+ # Update app/models/base.py logic",
+    "commit_title": "Base database entity class",
+    "commit_description": "Modifies base model imported by 14 downstream entity files",
+    "has_tests_modified": true,
+    "blast_radius": 14
+  }
+}

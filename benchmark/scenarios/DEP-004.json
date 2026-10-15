@@ -1,0 +1,16 @@
+{
+  "id": "DEP-004",
+  "title": "Authentication token utility",
+  "category": "dependency_impact_analysis",
+  "description": "Modifies token generator imported across 12 services",
+  "input": {
+    "changed_files": [
+      "app/core/tokens.py"
+    ],
+    "diff_text": "+ # Update app/core/tokens.py logic",
+    "commit_title": "Authentication token utility",
+    "commit_description": "Modifies token generator imported across 12 services",
+    "has_tests_modified": true,
+    "blast_radius": 12
+  }
+}

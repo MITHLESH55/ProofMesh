@@ -1,0 +1,16 @@
+{
+  "id": "SEC-006",
+  "title": "Hardcoded AWS Secret Access Key in storage driver",
+  "category": "security_violations",
+  "description": "Embeds plaintext AWS access keys in driver file",
+  "input": {
+    "changed_files": [
+      "app/services/storage.py"
+    ],
+    "diff_text": "+ AWS_ACCESS_KEY_ID = \"AKIAIOSFODNN7EXAMPLE\"\n+ AWS_SECRET_ACCESS_KEY = \"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"",
+    "commit_title": "Configure S3 client credentials",
+    "commit_description": "Store static access keys in S3 driver",
+    "has_tests_modified": false,
+    "blast_radius": 4
+  }
+}

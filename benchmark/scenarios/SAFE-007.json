@@ -1,0 +1,16 @@
+{
+  "id": "SAFE-007",
+  "title": "Add developer setup instructions in docs",
+  "category": "safe_low_risk_changes",
+  "description": "Add developer setup instructions in docs",
+  "input": {
+    "changed_files": [
+      "docs/setup.md"
+    ],
+    "diff_text": "+ Install python 3.11 and postgresql.",
+    "commit_title": "Add developer setup instructions in docs",
+    "commit_description": "Add developer setup instructions in docs",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

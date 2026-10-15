@@ -1,0 +1,16 @@
+{
+  "id": "RISK-010",
+  "title": "Frontend CSS Design Token Adjustment",
+  "category": "risk_classification",
+  "description": "Adjusts CSS color variable for dark mode styling",
+  "input": {
+    "changed_files": [
+      "frontend/src/index.css"
+    ],
+    "diff_text": "+ --bg-primary: #0a0f1d;",
+    "commit_title": "Adjust dark mode primary background token",
+    "commit_description": "Refines contrast ratio for dark mode palettes",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

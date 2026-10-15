@@ -1,0 +1,15 @@
+{
+  "id": "SEC-001",
+  "category": "security_violations",
+  "expected_risk_level": "CRITICAL",
+  "expected_policy_decision": "BLOCK",
+  "is_security_violation": true,
+  "expected_security_category": "INSECURE_INPUT",
+  "has_architecture_violation": false,
+  "has_missing_tests": true,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "BLOCKED",
+  "expected_impacted_files_count": 2,
+  "relevant_historical_match": "INC-2025-01",
+  "rationale": "Raw SQL query string interpolation exposes backend to critical SQL injection attacks."
+}

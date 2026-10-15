@@ -1,0 +1,16 @@
+{
+  "id": "RISK-002",
+  "title": "Database Schema Migration with Foreign Key Alteration",
+  "category": "risk_classification",
+  "description": "Modifies relational models affecting multiple persistence entities",
+  "input": {
+    "changed_files": [
+      "app/models/user.py"
+    ],
+    "diff_text": "+ organization_id = Column(String, nullable=True)",
+    "commit_title": "Relax foreign key constraint on organization",
+    "commit_description": "Allow nullable organization identifier in user table",
+    "has_tests_modified": false,
+    "blast_radius": 8
+  }
+}

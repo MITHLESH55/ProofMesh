@@ -1,0 +1,19 @@
+{
+  "id": "HIST-009",
+  "title": "Unhandled null reference in checkout transaction flow",
+  "category": "historical_evidence_retrieval",
+  "description": "Unhandled null reference in checkout transaction flow",
+  "input": {
+    "changed_files": [
+      "app/services/search.py"
+    ],
+    "diff_text": "+ # Retrieve historical incident evidence",
+    "commit_title": "Unhandled null reference in checkout transaction flow",
+    "commit_description": "Unhandled null reference in checkout transaction flow",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "historical_query": {
+      "query": "unhandled null reference exception checkout order flow"
+    }
+  }
+}

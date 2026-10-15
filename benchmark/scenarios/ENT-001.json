@@ -1,0 +1,26 @@
+{
+  "id": "ENT-001",
+  "title": "Core Auth Service Change impacting 4 repos",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Core Auth Service Change impacting 4 repos",
+  "input": {
+    "changed_files": [
+      "auth-service/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Core Auth Service Change impacting 4 repos",
+    "commit_description": "Core Auth Service Change impacting 4 repos",
+    "has_tests_modified": true,
+    "blast_radius": 5,
+    "enterprise_context": {
+      "source_repo": "auth-service",
+      "downstream": [
+        "user-service",
+        "billing-service",
+        "gateway",
+        "admin-portal"
+      ],
+      "is_breaking": true
+    }
+  }
+}

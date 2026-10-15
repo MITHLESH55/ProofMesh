@@ -1,0 +1,21 @@
+{
+  "id": "ENT-004",
+  "title": "Introducing circular cross-repo dependency",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Introducing circular cross-repo dependency",
+  "input": {
+    "changed_files": [
+      "service-a/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Introducing circular cross-repo dependency",
+    "commit_description": "Introducing circular cross-repo dependency",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "enterprise_context": {
+      "source_repo": "service-a",
+      "target_repo": "service-b",
+      "has_cycle": true
+    }
+  }
+}

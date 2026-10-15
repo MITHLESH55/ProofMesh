@@ -1,0 +1,23 @@
+{
+  "id": "ENT-006",
+  "title": "Additive API contract extension consumed by mobile-gateway",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Additive API contract extension consumed by mobile-gateway",
+  "input": {
+    "changed_files": [
+      "user-service/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Additive API contract extension consumed by mobile-gateway",
+    "commit_description": "Additive API contract extension consumed by mobile-gateway",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "enterprise_context": {
+      "source_repo": "user-service",
+      "downstream": [
+        "mobile-gateway"
+      ],
+      "is_breaking": false
+    }
+  }
+}

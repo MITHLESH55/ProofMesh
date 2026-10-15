@@ -1,0 +1,21 @@
+{
+  "id": "ENT-003",
+  "title": "Isolated internal service change",
+  "category": "multi_repository_enterprise_changes",
+  "description": "Isolated internal service change",
+  "input": {
+    "changed_files": [
+      "metrics-agent/src/lib.py"
+    ],
+    "diff_text": "+ # Enterprise cross-repo change",
+    "commit_title": "Isolated internal service change",
+    "commit_description": "Isolated internal service change",
+    "has_tests_modified": true,
+    "blast_radius": 1,
+    "enterprise_context": {
+      "source_repo": "metrics-agent",
+      "downstream": [],
+      "is_breaking": false
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "SEC-010",
+  "title": "Hardcoded Database Password in database connection URI",
+  "category": "security_violations",
+  "description": "Exposes plaintext postgres credentials in database driver",
+  "input": {
+    "changed_files": [
+      "app/db/connection.py"
+    ],
+    "diff_text": "+ DEFAULT_DSN = \"postgresql://dbadmin:P@ssword2026!@postgres-prod:5432/main_db\"",
+    "commit_title": "Set fallback DSN for production database",
+    "commit_description": "Hardcode default postgres connection URI",
+    "has_tests_modified": false,
+    "blast_radius": 3
+  }
+}

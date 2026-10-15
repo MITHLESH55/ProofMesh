@@ -1,0 +1,16 @@
+{
+  "id": "SEC-008",
+  "title": "Privileged Audit Purge endpoint missing authentication",
+  "category": "security_violations",
+  "description": "Creates unauthenticated administrative endpoint to delete audit records",
+  "input": {
+    "changed_files": [
+      "app/api/audit.py"
+    ],
+    "diff_text": "+ @router.delete(\"/admin/audit_logs/purge\")\n+ def purge_logs():\n+     return {\"purged\": True}",
+    "commit_title": "Add purge route for compliance audit log records",
+    "commit_description": "Delete audit history upon administrative request",
+    "has_tests_modified": false,
+    "blast_radius": 2
+  }
+}

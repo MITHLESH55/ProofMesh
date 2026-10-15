@@ -1,0 +1,24 @@
+{
+  "id": "REG-001",
+  "title": "Severe Error Rate Spike to 6.2%",
+  "category": "runtime_regressions",
+  "description": "Severe Error Rate Spike to 6.2%",
+  "input": {
+    "changed_files": [
+      "app/api/checkout.py"
+    ],
+    "diff_text": "+ # Deploy runtime changes",
+    "commit_title": "Severe Error Rate Spike to 6.2%",
+    "commit_description": "Severe Error Rate Spike to 6.2%",
+    "has_tests_modified": true,
+    "blast_radius": 2,
+    "telemetry": {
+      "base_err": 0.4,
+      "obs_err": 6.2,
+      "base_p95": 100.0,
+      "obs_p95": 115.0,
+      "reqs": 1000,
+      "errs": 62
+    }
+  }
+}

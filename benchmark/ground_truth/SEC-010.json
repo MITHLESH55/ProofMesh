@@ -1,0 +1,15 @@
+{
+  "id": "SEC-010",
+  "category": "security_violations",
+  "expected_risk_level": "HIGH",
+  "expected_policy_decision": "WARN",
+  "is_security_violation": true,
+  "expected_security_category": "SECRET_HANDLING",
+  "has_architecture_violation": false,
+  "has_missing_tests": true,
+  "has_runtime_regression": false,
+  "expected_governance_decision": "APPROVAL_REQUIRED",
+  "expected_impacted_files_count": 3,
+  "relevant_historical_match": "INC-2024-05",
+  "rationale": "Plaintext database connection password committed to source control."
+}

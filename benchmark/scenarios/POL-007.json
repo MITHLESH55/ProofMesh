@@ -1,0 +1,16 @@
+{
+  "id": "POL-007",
+  "title": "Clean documentation change",
+  "category": "policy_decisions",
+  "description": "Clean documentation change",
+  "input": {
+    "changed_files": [
+      "docs/faq.md"
+    ],
+    "diff_text": "+ Frequently Asked Questions",
+    "commit_title": "Clean documentation change",
+    "commit_description": "Clean documentation change",
+    "has_tests_modified": false,
+    "blast_radius": 1
+  }
+}

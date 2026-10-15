@@ -1,0 +1,16 @@
+{
+  "id": "TEST-006",
+  "title": "High blast radius session manager updated without test",
+  "category": "missing_test_detection",
+  "description": "High blast radius session manager updated without test",
+  "input": {
+    "changed_files": [
+      "app/services/session.py"
+    ],
+    "diff_text": "+ # Update logic in app/services/session.py",
+    "commit_title": "High blast radius session manager updated without test",
+    "commit_description": "Refactor component app/services/session.py",
+    "has_tests_modified": false,
+    "blast_radius": 9
+  }
+}
